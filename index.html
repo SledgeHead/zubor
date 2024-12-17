@@ -5,32 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Zubor.Us!</title>
 <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">    
+    <link rel="icon" type="image/png" href="favicon.png">
 
-<style>
+    <style>
         /* Page styling */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            display: flex; /* Enables flexbox */
-            justify-content: center; /* Centers horizontally */
-            align-items: center; /* Centers vertically */
-            background-color: ##f7f9fa; /* Optional: page background color */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            background-color: ##edfcfc; /* Greyish blue background */
+            text-align: center; /* Center-align the text */
+            color: #4088b2; /* Blue text color */
+            font-family: Arial, sans-serif; /* Clean font */
         }
 
         /* Image styling */
         img {
-            max-width: 100%; /* Makes the image responsive */
-            max-height: 100%; /* Ensures it doesn't overflow the page */
+            display: block; /* Makes image a block element */
+            margin: 0 auto 20px; /* Center image horizontally and add spacing below */
+            max-width: 100%; /* Ensures image is responsive */
+            max-height: 50%; /* Ensures it doesn't overflow */
             height: auto; /* Maintains aspect ratio */
-            display: block; /* Removes bottom whitespace */
+        }
+
+        /* Link styling */
+        a {
+            color: ##ffbcbc; /* Light Pink link color */
+            text-decoration: none; /* Removes underline */
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
         }
     </style>
 </head>
 <body>
-<img src="https://sledgehead.github.io/zubor/zuborUS.png" alt="Zubor.Us Logo">  
-<!-- Text under the image -->
+    <!-- Image -->
+    <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
+
+    <!-- Text under the image -->
     <p>You are being redirected. If you have not been redirected after 5 seconds, 
         <a href="https://www.babylist.com/Zubor">click here</a>.
     </p>
@@ -39,6 +57,7 @@
     <script>
         setTimeout(function() {
             window.location.href = "https://www.babylist.com/Zubor";
-        }, 5000); // 5000 milliseconds = 5 seconds
+        }, 5000); // Redirect after 5 seconds
+    </script>
 </body>
 </html>
