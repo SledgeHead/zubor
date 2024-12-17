@@ -2,8 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="5; url=https://www.babylist.com/Zubor">
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image</title>
+    <style>
+        /* Page styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex; /* Enables flexbox */
+            justify-content: center; /* Centers horizontally */
+            align-items: center; /* Centers vertically */
+            background-color: ##f7f9fa; /* Optional: page background color */
+        }
+
+        /* Image styling */
+        img {
+            max-width: 100%; /* Makes the image responsive */
+            max-height: 100%; /* Ensures it doesn't overflow the page */
+            height: auto; /* Maintains aspect ratio */
+            display: block; /* Removes bottom whitespace */
+        }
+    </style>
 </head>
 <body>
 <img src="https://sledgehead.github.io/zubor/zuborUS.png" alt="Zubor.Us Logo">  
