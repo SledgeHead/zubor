@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Zubor.Us!</title>
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
-
     <style>
         /* Page styling */
         body, html {
@@ -15,72 +13,116 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            background-color: #edfcfc; /* Greyish blue background */
-            text-align: center; /* Center-align the text */
-            color: #4088b2; /* Blue text color */
-            font-family: Arial, sans-serif; /* Clean font */
+            justify-content: center;
+            align-items: center;
+            background-color: #edfcfc;
+            text-align: center;
+            color: #4088b2;
+            font-family: Arial, sans-serif;
         }
 
-        /* Image styling */
         img {
-            display: block; /* Makes image a block element */
-            margin: 0 auto 20px; /* Center image horizontally and add spacing below */
-            max-width: 100%; /* Ensures image is responsive */
-            max-height: 50%; /* Ensures it doesn't overflow */
-            height: auto; /* Maintains aspect ratio */
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            max-height: 50%;
+            height: auto;
         }
 
-        /* Countdown styling */
-        #countdown {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        /* Link styling */
         a {
-            color: #ffbcbc; /* Light Pink link color */
-            text-decoration: none; /* Removes underline */
+            color: #ffbcbc;
+            text-decoration: none;
             font-weight: bold;
         }
 
         a:hover {
-            text-decoration: underline; /* Underline on hover */
+            text-decoration: underline;
+        }
+
+        /* Styling for countdown and pregnancy tracker */
+        .countdown, .pregnancy-tracker {
+            font-size: 1.2em;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
+
     <!-- Image -->
     <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
 
-    <!-- Countdown -->
-    <p id="countdown">Calculating...</p>
+    <!-- Baby Countdown Timer -->
+    <p class="countdown" id="countdown"></p>
 
-    <!-- Text under the image -->
+    <!-- Pregnancy Week Tracker -->
+    <p class="pregnancy-tracker" id="pregnancyWeek"></p>
+
+    <!-- Redirection Info -->
     <p>You are being redirected. If you have not been redirected after 5 seconds, 
         <a href="https://www.babylist.com/Zubor">click here</a>.
     </p>
 
     <!-- Redirect Script -->
     <script>
+        // Baby Due Date Countdown
         function updateCountdown() {
-            const dueDate = new Date("June 26, 2025").getTime();
-            const today = new Date().getTime();
-            const timeLeft = dueDate - today;
-            const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
-
-            document.getElementById("countdown").innerText = `Days 'Til Baby Zoob: ${daysLeft}`;
+            const dueDate = new Date("June 26, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = dueDate - now;
+            
+            const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").innerHTML = `Days 'Til Baby Zoob: ${daysLeft}`;
         }
 
-        updateCountdown(); // Run countdown on page load
-    </script>
+        // Pregnancy Week Tracker
+        function updatePregnancyWeek() {
+            const conceptionDate = new Date("October 14, 2024");  // Approximate conception date
+            const today = new Date();
+            
+            const diffInDays = Math.floor((today - conceptionDate) / (1000 * 60 * 60 * 24));
+            const pregnancyWeek = Math.floor(diffInDays / 7) + 1; // Start at week 1
+            
+            const funnySizes = [
+                "a pixel on a CRT screen",
+                "a grain of sand in Anakin’s nightmares",
+                "a single tater tot",
+                "a jelly bean that rolled under the couch",
+                "a D20 that always rolls a 1",
+                "a Baby Yoda (but just the ears)",
+                "a Funko Pop box (still in mint condition)",
+                "a can of Pringles (tall and weirdly shaped)",
+                "a Pokémon card sleeve",
+                "a VHS tape of Jurassic Park",
+                "a McDonald's hash brown (crispy, hopefully)",
+                "a chicken nugget from the drive-thru",
+                "a lightsaber hilt (Kylo Ren’s, with the unnecessary bits)",
+                "an Xbox controller (pre-nerf Duke edition)",
+                "a bundle of Halloween candy that 'somehow' disappeared",
+                "a Porg (still screaming)",
+                "a Mandalorian helmet (beskar, of course)",
+                "a Mortal Kombat arcade joystick",
+                "a Nintendo 64 cartridge",
+                "a baguette from a Zelda game",
+                "a PS5 controller (that battery life, tho)",
+                "a bag of Flamin' Hot Cheetos (open at your own risk)",
+                "a 90s AOL CD (but more useful)",
+                "a rubber chicken that squeaks when you squeeze"
+            ];
 
-    <script>
+            const currentSize = funnySizes[Math.min(pregnancyWeek - 1, funnySizes.length - 1)];
+            
+            document.getElementById("pregnancyWeek").innerHTML = `Baby Zoob is at <b>week ${pregnancyWeek}</b> and is about the size of <b>${currentSize}</b>.`;
+        }
+
+        // Run functions on page load
+        updateCountdown();
+        updatePregnancyWeek();
+
+        // Redirect after 5 seconds
         setTimeout(function() {
             window.location.href = "https://www.babylist.com/Zubor";
-        }, 5000); // Redirect after 5 seconds
+        }, 5000);
     </script>
+
 </body>
 </html>
