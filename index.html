@@ -4,82 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Zubor.Us!</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
+
     <style>
+        /* Page styling */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #edfcfc;
-            text-align: center;
-            color: #4088b2;
-            font-family: Arial, sans-serif;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            background-color: #edfcfc; /* Greyish blue background */
+            text-align: center; /* Center-align the text */
+            color: #4088b2; /* Blue text color */
+            font-family: Arial, sans-serif; /* Clean font */
         }
+
+        /* Image styling */
         img {
-            display: block;
-            margin: 0 auto 20px;
-            max-width: 60%; /* Restores original size */
-            height: auto;
+            display: block; /* Makes image a block element */
+            margin: 0 auto 20px; /* Center image horizontally and add spacing below */
+            max-width: 100%; /* Ensures image is responsive */
+            max-height: 50%; /* Ensures it doesn't overflow */
+            height: auto; /* Maintains aspect ratio */
         }
+
+        /* Countdown styling */
+        #countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Link styling */
         a {
-            color: #ffbcbc;
-            text-decoration: none;
+            color: #ffbcbc; /* Light Pink link color */
+            text-decoration: none; /* Removes underline */
             font-weight: bold;
         }
+
         a:hover {
-            text-decoration: underline;
-        }
-        #week-info, #countdown {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 10px;
+            text-decoration: underline; /* Underline on hover */
         }
     </style>
 </head>
 <body>
+    <!-- Image -->
     <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
+
+    <!-- Countdown -->
+    <p id="countdown">Calculating...</p>
+
+ <script>
+
+        // Set important dates
+
+        const conceptionDate = new Date('2024-10-02'); // Estimated conception date
+
+        const dueDate = new Date('2025-06-26'); // Scheduled C-section
+
+        const today = new Date();
+
+
+
+        // Calculate current pregnancy week
+
+        const timeDiff = today - conceptionDate;
+
+        const currentWeek = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7)) + 1;
+
+
+
+        // Size comparisons for each week
+
+        const sizeComparisons = [
+
+            "N/A", "N/A", "a pinhead", "a poppy seed", "a sesame seed", "a lentil", "a blueberry",
+
+            "a kidney bean", "a grape", "an olive", "a fig", "a lime", "a pea pod", "a lemon", "an apple",
+
+            "an avocado", "an onion", "a sweet potato", "a mango", "a banana", "a carrot", "a spaghetti squash",
+
+            "a grapefruit", "a cantaloupe", "a cauliflower", "a bunch of kale", "a rutabaga", "an eggplant",
+
+            "a butternut squash", "a cabbage", "a coconut", "a jicama", "a pineapple", "a cantaloupe",
+
+            "a honeydew melon", "a head of romaine lettuce", "a bunch of Swiss chard", "a leek", "a mini watermelon",
+
+            "a pumpkin", "a jackfruit", "a watermelon"
+
+        ];
+
+
+
+        // Display current pregnancy week and size comparison
+
+        if (currentWeek >= 1 && currentWeek <= 42) {
+
+            document.getElementById("week-info").innerText = `Baby Z is ${currentWeek} weeks old and is the size of ${sizeComparisons[currentWeek]}.`;
+
+        } else {
+
+            document.getElementById("week-info").innerText = "Baby Z has arrived!";
+
+        }
+
+
+
+        // Countdown to baby’s arrival
+
+        const timeUntilDue = dueDate - today;
+
+        const daysUntilDue = Math.ceil(timeUntilDue / (1000 * 60 * 60 * 24));
+
+        document.getElementById("countdown").innerText = `Days 'Til Baby Zoob: ${daysUntilDue}`;
+
+    </script>
+
+    <!-- Text under the image -->
     <p>You are being redirected. If you have not been redirected after 5 seconds, 
         <a href="https://www.babylist.com/Zubor">click here</a>.
     </p>
-    <p id="week-info"></p>
-    <p id="countdown"></p>
 
+    <!-- Redirect Script -->
     <script>
-        // Set important dates
-        const conceptionDate = new Date('2024-10-02'); // Estimated conception date
-        const dueDate = new Date('2025-06-26'); // Scheduled C-section
-        const today = new Date();
+        function updateCountdown() {
+            const dueDate = new Date("June 26, 2025").getTime();
+            const today = new Date().getTime();
+            const timeLeft = dueDate - today;
+            const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
 
-        // Calculate current pregnancy week
-        const timeDiff = today - conceptionDate;
-        const currentWeek = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7)) + 1;
-
-        // Size comparisons for each week
-        const sizeComparisons = [
-            "N/A", "N/A", "a pinhead", "a poppy seed", "a sesame seed", "a lentil", "a blueberry",
-            "a kidney bean", "a grape", "an olive", "a fig", "a lime", "a pea pod", "a lemon", "an apple",
-            "an avocado", "an onion", "a sweet potato", "a mango", "a banana", "a carrot", "a spaghetti squash",
-            "a grapefruit", "a cantaloupe", "a cauliflower", "a bunch of kale", "a rutabaga", "an eggplant",
-            "a butternut squash", "a cabbage", "a coconut", "a jicama", "a pineapple", "a cantaloupe",
-            "a honeydew melon", "a head of romaine lettuce", "a bunch of Swiss chard", "a leek", "a mini watermelon",
-            "a pumpkin", "a jackfruit", "a watermelon"
-        ];
-
-        // Display current pregnancy week and size comparison
-        if (currentWeek >= 1 && currentWeek <= 42) {
-            document.getElementById("week-info").innerText = `Baby Z is ${currentWeek} weeks old and is the size of ${sizeComparisons[currentWeek]}.`;
-        } else {
-            document.getElementById("week-info").innerText = "Baby Z has arrived!";
+            document.getElementById("countdown").innerText = `Days 'Til Baby Zoob: ${daysLeft}`;
         }
 
-        // Countdown to baby’s arrival
-        const timeUntilDue = dueDate - today;
-        const daysUntilDue = Math.ceil(timeUntilDue / (1000 * 60 * 60 * 24));
-        document.getElementById("countdown").innerText = `Days 'Til Baby Zoob: ${daysUntilDue}`;
+        updateCountdown(); // Run countdown on page load
+    </script>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://www.babylist.com/Zubor";
+        }, 5000); // Redirect after 5 seconds
     </script>
 </body>
 </html>
