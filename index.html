@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Zubor.Us!</title>
-<!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
     <style>
@@ -17,7 +17,7 @@
             flex-direction: column;
             justify-content: center; /* Center content vertically */
             align-items: center; /* Center content horizontally */
-            background-color: ##edfcfc; /* Greyish blue background */
+            background-color: #edfcfc; /* Greyish blue background */
             text-align: center; /* Center-align the text */
             color: #4088b2; /* Blue text color */
             font-family: Arial, sans-serif; /* Clean font */
@@ -32,9 +32,16 @@
             height: auto; /* Maintains aspect ratio */
         }
 
+        /* Countdown styling */
+        #countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
         /* Link styling */
         a {
-            color: ##ffbcbc; /* Light Pink link color */
+            color: #ffbcbc; /* Light Pink link color */
             text-decoration: none; /* Removes underline */
             font-weight: bold;
         }
@@ -44,8 +51,12 @@
         }
     </style>
 </head>
-<!-- Image -->
+<body>
+    <!-- Image -->
     <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
+
+    <!-- Countdown -->
+    <p id="countdown">Calculating...</p>
 
     <!-- Text under the image -->
     <p>You are being redirected. If you have not been redirected after 5 seconds, 
@@ -53,6 +64,19 @@
     </p>
 
     <!-- Redirect Script -->
+    <script>
+        function updateCountdown() {
+            const dueDate = new Date("June 26, 2025").getTime();
+            const today = new Date().getTime();
+            const timeLeft = dueDate - today;
+            const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
+
+            document.getElementById("countdown").innerText = `Days 'Til Baby Zoob: ${daysLeft}`;
+        }
+
+        updateCountdown(); // Run countdown on page load
+    </script>
+
     <script>
         setTimeout(function() {
             window.location.href = "https://www.babylist.com/Zubor";
