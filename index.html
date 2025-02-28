@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Zubor.Us!</title>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google Font (Quicksand) -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         /* Page styling */
@@ -15,12 +19,12 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #edfcfc;
-            text-align: center;
-            color: #4088b2;
-            font-family: Arial, sans-serif;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            background-color: #edfcfc; /* Greyish blue background */
+            text-align: center; /* Center-align the text */
+            color: #4088b2; /* Blue text color */
+            font-family: 'Quicksand', Arial, sans-serif; /* Apply Quicksand font */
         }
 
         /* Image styling */
@@ -32,10 +36,10 @@
             height: auto;
         }
 
-        /* Text styling */
-        #week-info, #countdown {
+        /* Countdown styling */
+        #countdown, #pregnancy-week {
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 10px;
         }
 
@@ -55,8 +59,8 @@
     <!-- Image -->
     <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
 
-    <!-- Pregnancy Week Info -->
-    <p id="week-info">Calculating...</p>
+    <!-- Pregnancy Week Counter -->
+    <p id="pregnancy-week">Calculating...</p>
 
     <!-- Countdown -->
     <p id="countdown">Calculating...</p>
@@ -66,35 +70,29 @@
         <a href="https://www.babylist.com/Zubor">click here</a>.
     </p>
 
-    <!-- Script for Countdown and Weekly Update -->
+    <!-- Scripts -->
     <script>
-        function updateInfo() {
-            const conceptionDate = new Date("October 2, 2024"); // Estimated conception date
-            const dueDate = new Date("June 26, 2025");
-            const today = new Date();
+        function updateCountdown() {
+            const dueDate = new Date("June 26, 2025").getTime();
+            const today = new Date().getTime();
+            const timeLeft = dueDate - today;
+            const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
 
-            // Calculate current pregnancy week
-            const timeDiff = today - conceptionDate;
-            const currentWeek = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7)) + 1;
-
-            // Ensure valid week range
-            if (currentWeek >= 1 && currentWeek <= 42) {
-                document.getElementById("week-info").innerText = `We are currently in Week ${currentWeek}.`;
-            } else {
-                document.getElementById("week-info").innerText = "Baby Z has arrived!";
-            }
-
-            // Countdown to baby’s arrival
-            const timeUntilDue = dueDate - today;
-            const daysUntilDue = Math.ceil(timeUntilDue / (1000 * 60 * 60 * 24));
-            document.getElementById("countdown").innerText = `Days 'Til Baby Zoob: ${daysUntilDue}`;
+            document.getElementById("countdown").innerText = `Days 'Til Baby Zoob: ${daysLeft}`;
         }
 
-        updateInfo(); // Run on page load
-    </script>
+        function updatePregnancyWeek() {
+            const startDate = new Date("October 3, 2024"); // Adjust based on actual conception date
+            const today = new Date();
+            const timeDiff = today - startDate;
+            const weeksPregnant = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7)) + 1;
 
-    <!-- Redirect Script -->
-    <script>
+            document.getElementById("pregnancy-week").innerText = `We are currently in Week ${weeksPregnant}`;
+        }
+
+        updateCountdown();
+        updatePregnancyWeek();
+
         setTimeout(function() {
             window.location.href = "https://www.babylist.com/Zubor";
         }, 5000);
