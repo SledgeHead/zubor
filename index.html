@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Zubor.Us!</title>
     <link rel="icon" type="image/png" href="favicon.png">
+
     <style>
         /* Page styling */
         body, html {
@@ -21,6 +22,7 @@
             font-family: Arial, sans-serif;
         }
 
+        /* Image styling */
         img {
             display: block;
             margin: 0 auto 20px;
@@ -29,6 +31,21 @@
             height: auto;
         }
 
+        /* Countdown styling */
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Weekly tracker styling */
+        .weekly-tracker {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Link styling */
         a {
             color: #ffbcbc;
             text-decoration: none;
@@ -38,12 +55,6 @@
         a:hover {
             text-decoration: underline;
         }
-
-        /* Styling for countdown and pregnancy tracker */
-        .countdown, .pregnancy-tracker {
-            font-size: 1.2em;
-            margin-top: 15px;
-        }
     </style>
 </head>
 <body>
@@ -51,78 +62,91 @@
     <!-- Image -->
     <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
 
-    <!-- Baby Countdown Timer -->
+    <!-- Countdown Timer -->
     <p class="countdown" id="countdown"></p>
 
-    <!-- Pregnancy Week Tracker -->
-    <p class="pregnancy-tracker" id="pregnancyWeek"></p>
+    <!-- Weekly Size Tracker -->
+    <p class="weekly-tracker" id="weeklyTracker"></p>
 
-    <!-- Redirection Info -->
+    <!-- Redirect Message -->
     <p>You are being redirected. If you have not been redirected after 5 seconds, 
         <a href="https://www.babylist.com/Zubor">click here</a>.
     </p>
 
     <!-- Redirect Script -->
     <script>
-        // Baby Due Date Countdown
-        function updateCountdown() {
-            const dueDate = new Date("June 26, 2025 00:00:00").getTime();
-            const now = new Date().getTime();
-            const timeLeft = dueDate - now;
-            
-            const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            document.getElementById("countdown").innerHTML = `Days 'Til Baby Zoob: ${daysLeft}`;
-        }
-
-        // Pregnancy Week Tracker
-        function updatePregnancyWeek() {
-            const conceptionDate = new Date("October 14, 2024");  // Approximate conception date
-            const today = new Date();
-            
-            const diffInDays = Math.floor((today - conceptionDate) / (1000 * 60 * 60 * 24));
-            const pregnancyWeek = Math.floor(diffInDays / 7) + 1; // Start at week 1
-            
-            const funnySizes = [
-                "a pixel on a CRT screen",
-                "a grain of sand in Anakin’s nightmares",
-                "a single tater tot",
-                "a jelly bean that rolled under the couch",
-                "a D20 that always rolls a 1",
-                "a Baby Yoda (but just the ears)",
-                "a Funko Pop box (still in mint condition)",
-                "a can of Pringles (tall and weirdly shaped)",
-                "a Pokémon card sleeve",
-                "a VHS tape of Jurassic Park",
-                "a McDonald's hash brown (crispy, hopefully)",
-                "a chicken nugget from the drive-thru",
-                "a lightsaber hilt (Kylo Ren’s, with the unnecessary bits)",
-                "an Xbox controller (pre-nerf Duke edition)",
-                "a bundle of Halloween candy that 'somehow' disappeared",
-                "a Porg (still screaming)",
-                "a Mandalorian helmet (beskar, of course)",
-                "a Mortal Kombat arcade joystick",
-                "a Nintendo 64 cartridge",
-                "a baguette from a Zelda game",
-                "a PS5 controller (that battery life, tho)",
-                "a bag of Flamin' Hot Cheetos (open at your own risk)",
-                "a 90s AOL CD (but more useful)",
-                "a rubber chicken that squeaks when you squeeze"
-            ];
-
-            const currentSize = funnySizes[Math.min(pregnancyWeek - 1, funnySizes.length - 1)];
-            
-            document.getElementById("pregnancyWeek").innerHTML = `Baby Zoob is at <b>week ${pregnancyWeek}</b> and is about the size of <b>${currentSize}</b>.`;
-        }
-
-        // Run functions on page load
-        updateCountdown();
-        updatePregnancyWeek();
-
-        // Redirect after 5 seconds
         setTimeout(function() {
             window.location.href = "https://www.babylist.com/Zubor";
-        }, 5000);
-    </script>
+        }, 5000); // Redirect after 5 seconds
 
+        // Countdown to June 26, 2025 (C-section date)
+        function updateCountdown() {
+            const dueDate = new Date("June 26, 2025").getTime();
+            const now = new Date().getTime();
+            const timeLeft = dueDate - now;
+            const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").innerText = "Days 'Til Baby Zoob: " + daysLeft;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 86400000); // Update daily
+
+        // Weekly Size Comparisons (42 weeks total)
+        const sizeComparisons = [
+            "Baby Zoob is the size of a tiki torch flame (tiny but full of potential).",
+            "About as big as a Dole Whip spoon (sweet beginnings).",
+            "The size of Zero’s favorite treat (which he definitely deserves more of).",
+            "As small as a hidden Mickey (but already magical).",
+            "The size of a Haunted Mansion stretching room candle (still stretching!).",
+            "Roughly a Tiki Room macaw feather (Polynesian flair included).",
+            "About as big as Jack Sparrow’s compass (still finding direction).",
+            "The size of Boo’s paw print (a little mischief incoming).",
+            "As big as one of Gaston’s eggs (he eats five dozen, you know).",
+            "Roughly a Mickey pretzel twist (salty, but lovable).",
+            "Baby Zoob is now as big as a Mad Hatter’s teacup handle (handle with care!).",
+            "The size of a Toy Story alien’s eyeball (Oooooh, the claw!).",
+            "The size of a Haunted Mansion hitchhiking ghost’s hat (spooky growth).",
+            "As big as a Pirates of the Caribbean gold coin (treasure this moment!).",
+            "Baby Zoob is now about the size of a WWE championship belt buckle (future champion incoming).",
+            "As long as a churro from Main Street U.S.A. (crunchy exterior, soft interior).",
+            "About the size of a Jungle Cruise skipper’s hat (puns included).",
+            "Baby Zoob is as big as a Tiki Room drumming tiki (drumming up excitement).",
+            "Now about the size of a Star Wars thermal detonator soda bottle (only one Star Wars reference, I promise).",
+            "Baby Zoob is roughly the size of a Doom Buggy seat (please remain seated!).",
+            "As big as a turkey leg from Disney World (but cuter and less greasy).",
+            "Baby Zoob is now the size of a full set of Mickey ears (perfectly proportioned).",
+            "The size of a pirate ship in a bottle (Yo ho, Yo ho, a baby’s life for me!).",
+            "As big as one of Zero’s tennis balls (bouncy and full of energy).",
+            "Baby Zoob is now about as big as a Hitchhiking Ghost lantern (still floating along).",
+            "The size of a Trader Sam’s tiki mug (no shrunken heads here!).",
+            "Baby Zoob is as big as a Fantasyland popcorn bucket (filled with excitement).",
+            "Now about the size of a Monorail handrail (holding on for dear life).",
+            "Baby Zoob is the size of a Jungle Cruise boat’s steering wheel (smooth sailing).",
+            "As big as a Pirates of the Caribbean cannonball (but much more cuddly).",
+            "Baby Zoob is now the size of one of the Country Bears' banjos (honky-tonk time!).",
+            "The size of a Haunted Mansion gargoyle (spooky but adorable).",
+            "Now about as big as a Doom Buggy ride vehicle (next stop: parenthood).",
+            "Baby Zoob is the size of one of the Seven Dwarfs’ pickaxes (digging this growth!).",
+            "As big as a MagicBand+ (but much more interactive).",
+            "Baby Zoob is now about the size of one of Mufasa’s paws (majestic and strong).",
+            "The size of a full Tiki Room drumming setup (percussion prodigy incoming).",
+            "Baby Zoob is as big as an entire Dole Whip float (sweet and refreshing).",
+            "Now about the size of a Splash Mountain log (no sudden drops though!).",
+            "Baby Zoob is the size of Cinderella’s glass slipper (fitting perfectly into our lives).",
+            "As big as the stretching room ceiling (no turning back now!)."
+        ];
+
+        function updateWeeklyTracker() {
+            const startDate = new Date("January 1, 2025"); // Adjust if needed
+            const now = new Date();
+            const diffWeeks = Math.floor((now - startDate) / (1000 * 60 * 60 * 24 * 7));
+            const currentWeek = Math.min(diffWeeks, sizeComparisons.length - 1);
+            document.getElementById("weeklyTracker").innerText = sizeComparisons[currentWeek];
+        }
+
+        updateWeeklyTracker();
+        setInterval(updateWeeklyTracker, 86400000); // Update daily
+
+    </script>
 </body>
 </html>
