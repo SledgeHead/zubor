@@ -19,15 +19,14 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            background-color: #edfcfc; /* Greyish blue background */
-            text-align: center; /* Center-align the text */
-            color: #4088b2; /* Blue text color */
-            font-family: 'Quicksand', Arial, sans-serif; /* Apply Quicksand font */
+            justify-content: center;
+            align-items: center;
+            background-color: #edfcfc;
+            text-align: center;
+            color: #4088b2;
+            font-family: 'Quicksand', Arial, sans-serif;
         }
 
-        /* Image styling */
         img {
             display: block;
             margin: 0 auto 20px;
@@ -36,14 +35,12 @@
             height: auto;
         }
 
-        /* Countdown styling */
         #countdown, #pregnancy-week {
             font-size: 24px;
             font-weight: 600;
             margin-bottom: 10px;
         }
 
-        /* Link styling */
         a {
             color: #ffbcbc;
             text-decoration: none;
@@ -56,42 +53,43 @@
     </style>
 </head>
 <body>
-    <!-- Image -->
     <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
 
-    <!-- Pregnancy Week Counter -->
+    <!-- Weeks Since Birth -->
     <p id="pregnancy-week">Calculating...</p>
 
-    <!-- Countdown -->
+    <!-- Countdown to Next Birthday -->
     <p id="countdown">Calculating...</p>
 
-    <!-- Text under the image -->
     <p>You are being redirected. If you have not been redirected after 5 seconds, 
         <a href="https://www.babylist.com/Zubor">click here</a>.
     </p>
 
-    <!-- Scripts -->
     <script>
-        function updateCountdown() {
-            const dueDate = new Date("June 26, 2025").getTime();
-            const today = new Date().getTime();
-            const timeLeft = dueDate - today;
-            const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
-
-            document.getElementById("countdown").innerText = `Days 'Til Baby Zoob: ${daysLeft}`;
-        }
-
-        function updatePregnancyWeek() {
-            const startDate = new Date("September 29, 2024"); // Adjust based on actual conception date
+        function updateWeeksSinceBirth() {
+            const birthDate = new Date("June 16, 2025");
             const today = new Date();
-            const timeDiff = today - startDate;
-            const weeksPregnant = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7)) + 1;
-
-            document.getElementById("pregnancy-week").innerText = `We are currently in Week ${weeksPregnant}`;
+            const timeDiff = today - birthDate;
+            const weeksSinceBirth = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7));
+            document.getElementById("pregnancy-week").innerText = `Dalton is ${weeksSinceBirth} week${weeksSinceBirth !== 1 ? 's' : ''} old`;
         }
 
-        updateCountdown();
-        updatePregnancyWeek();
+        function updateNextBirthdayCountdown() {
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            let nextBirthday = new Date(`June 16, ${currentYear}`);
+
+            if (today > nextBirthday) {
+                nextBirthday = new Date(`June 16, ${currentYear + 1}`);
+            }
+
+            const timeDiff = nextBirthday - today;
+            const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").innerText = `Days 'Til Dalton's Birthday: ${daysLeft} 🎉`;
+        }
+
+        updateWeeksSinceBirth();
+        updateNextBirthdayCountdown();
 
         setTimeout(function() {
             window.location.href = "https://www.babylist.com/Zubor";
