@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Page styling */
         body, html {
             margin: 0;
             padding: 0;
@@ -55,10 +54,8 @@
 <body>
     <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
 
-    <!-- Months Since Birth -->
     <p id="child-age">Calculating...</p>
 
-    <!-- Countdown to Next Birthday -->
     <p id="countdown">Calculating...</p>
 
     <p>
@@ -67,22 +64,35 @@
     </p>
 
     <script>
-        function updateMonthsSinceBirth() {
+        function updateChildAge() {
             const birthDate = new Date("June 16, 2025");
             const today = new Date();
 
-            let months =
+            let totalMonths =
                 (today.getFullYear() - birthDate.getFullYear()) * 12 +
                 (today.getMonth() - birthDate.getMonth());
 
-            // If we haven't reached the birth day yet this month,
-            // subtract one month.
             if (today.getDate() < birthDate.getDate()) {
-                months--;
+                totalMonths--;
+            }
+
+            const years = Math.floor(totalMonths / 12);
+            const months = totalMonths % 12;
+
+            let ageText = "";
+
+            if (years === 0) {
+                ageText = `${months} month${months !== 1 ? "s" : ""} old`;
+            } else if (months === 0) {
+                ageText = `${years} year${years !== 1 ? "s" : ""} old`;
+            } else {
+                ageText =
+                    `${years} year${years !== 1 ? "s" : ""}, ` +
+                    `${months} month${months !== 1 ? "s" : ""} old`;
             }
 
             document.getElementById("child-age").innerText =
-                `Dalton is ${months} month${months !== 1 ? 's' : ''} old`;
+                `Dalton is ${ageText}`;
         }
 
         function updateNextBirthdayCountdown() {
@@ -101,7 +111,7 @@
                 `Days 'Til Dalton's Birthday: ${daysLeft} 🎉`;
         }
 
-        updateMonthsSinceBirth();
+        updateChildAge();
         updateNextBirthdayCountdown();
 
         setTimeout(function() {
