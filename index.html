@@ -8,14 +8,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Google Font (Quicksand) -->
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -30,38 +30,72 @@
             display: block;
             margin: 0 auto 20px;
             max-width: 100%;
-            max-height: 50%;
+            max-height: 50vh;
             height: auto;
         }
 
-        #countdown, #child-age {
+        #child-age,
+        #countdown {
             font-size: 24px;
             font-weight: 600;
             margin-bottom: 10px;
         }
 
-        a {
-            color: #ffbcbc;
-            text-decoration: none;
-            font-weight: bold;
+        .links {
+            margin-top: 25px;
+            width: 100%;
+            max-width: 320px;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .button {
+            display: block;
+            margin: 12px auto;
+            padding: 14px 20px;
+            border-radius: 12px;
+            background: #4088b2;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.15s ease;
+        }
+
+        .button:hover {
+            transform: scale(1.03);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #6b92a8;
         }
     </style>
 </head>
 <body>
+
     <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
 
     <p id="child-age">Calculating...</p>
 
     <p id="countdown">Calculating...</p>
 
-    <p>
-        You are being redirected. If you have not been redirected after 5 seconds,
-        <a href="https://www.babylist.com/dalton-zubor">click here</a>.
-    </p>
+    <div class="links">
+        <a class="button"
+           href="https://cloud.clz.com/babyz/books?collectionStatus=in-collection"
+           target="_blank">
+            📚 Dalton's Library
+        </a>
+
+        <a class="button"
+           href="https://www.babylist.com/dalton-zubor"
+           target="_blank">
+            🎁 Baby Registry
+        </a>
+    </div>
+
+    <div class="footer">
+        Welcome to the Zubor family hub.
+    </div>
 
     <script>
         function updateChildAge() {
@@ -98,6 +132,7 @@
         function updateNextBirthdayCountdown() {
             const today = new Date();
             const currentYear = today.getFullYear();
+
             let nextBirthday = new Date(`June 16, ${currentYear}`);
 
             if (today > nextBirthday) {
@@ -107,16 +142,18 @@
             const timeDiff = nextBirthday - today;
             const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 
-            document.getElementById("countdown").innerText =
-                `Days 'Til Dalton's Birthday: ${daysLeft} 🎉`;
+            if (daysLeft === 0) {
+                document.getElementById("countdown").innerText =
+                    "🎂 Happy Birthday, Dalton!";
+            } else {
+                document.getElementById("countdown").innerText =
+                    `Days 'Til Dalton's Birthday: ${daysLeft} 🎉`;
+            }
         }
 
         updateChildAge();
         updateNextBirthdayCountdown();
-
-        setTimeout(function() {
-            window.location.href = "https://www.babylist.com/dalton-zubor";
-        }, 5000);
     </script>
+
 </body>
 </html>
