@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Zubor.Us!</title>
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
@@ -35,7 +35,7 @@
             height: auto;
         }
 
-        #countdown, #pregnancy-week {
+        #countdown, #child-age {
             font-size: 24px;
             font-weight: 600;
             margin-bottom: 10px;
@@ -55,23 +55,34 @@
 <body>
     <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
 
-    <!-- Weeks Since Birth -->
-    <p id="pregnancy-week">Calculating...</p>
+    <!-- Months Since Birth -->
+    <p id="child-age">Calculating...</p>
 
     <!-- Countdown to Next Birthday -->
     <p id="countdown">Calculating...</p>
 
-    <p>You are being redirected. If you have not been redirected after 5 seconds, 
+    <p>
+        You are being redirected. If you have not been redirected after 5 seconds,
         <a href="https://www.babylist.com/dalton-zubor">click here</a>.
     </p>
 
     <script>
-        function updateWeeksSinceBirth() {
+        function updateMonthsSinceBirth() {
             const birthDate = new Date("June 16, 2025");
             const today = new Date();
-            const timeDiff = today - birthDate;
-            const weeksSinceBirth = Math.floor(timeDiff / (1000 * 60 * 60 * 24 * 7));
-            document.getElementById("pregnancy-week").innerText = `Dalton is ${weeksSinceBirth} week${weeksSinceBirth !== 1 ? 's' : ''} old`;
+
+            let months =
+                (today.getFullYear() - birthDate.getFullYear()) * 12 +
+                (today.getMonth() - birthDate.getMonth());
+
+            // If we haven't reached the birth day yet this month,
+            // subtract one month.
+            if (today.getDate() < birthDate.getDate()) {
+                months--;
+            }
+
+            document.getElementById("child-age").innerText =
+                `Dalton is ${months} month${months !== 1 ? 's' : ''} old`;
         }
 
         function updateNextBirthdayCountdown() {
@@ -85,10 +96,12 @@
 
             const timeDiff = nextBirthday - today;
             const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-            document.getElementById("countdown").innerText = `Days 'Til Dalton's Birthday: ${daysLeft} 🎉`;
+
+            document.getElementById("countdown").innerText =
+                `Days 'Til Dalton's Birthday: ${daysLeft} 🎉`;
         }
 
-        updateWeeksSinceBirth();
+        updateMonthsSinceBirth();
         updateNextBirthdayCountdown();
 
         setTimeout(function() {
@@ -97,4 +110,3 @@
     </script>
 </body>
 </html>
-
