@@ -1,86 +1,94 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Zubor.Us!</title>
+    <title>Zubor Family Hub</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+```
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #edfcfc;
-            text-align: center;
-            color: #4088b2;
-            font-family: 'Quicksand', Arial, sans-serif;
-        }
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #edfcfc;
+        text-align: center;
+        color: #4088b2;
+        font-family: 'Quicksand', Arial, sans-serif;
+    }
 
-        img {
-            display: block;
-            margin: 0 auto 20px;
-            max-width: 100%;
-            max-height: 50vh;
-            height: auto;
-        }
+    img {
+        display: block;
+        margin: 0 auto 25px;
+        max-width: 100%;
+        max-height: 45vh;
+        height: auto;
+    }
 
-        #child-age,
-        #countdown {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
+    #child-age,
+    #countdown {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 8px 0;
+    }
 
-        .links {
-            margin-top: 25px;
-            width: 100%;
-            max-width: 320px;
-        }
+    .links {
+        margin-top: 30px;
+        width: 100%;
+        max-width: 340px;
+    }
 
-        .button {
-            display: block;
-            margin: 12px auto;
-            padding: 14px 20px;
-            border-radius: 12px;
-            background: #4088b2;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            transition: transform 0.15s ease;
-        }
+    .button {
+        display: block;
+        margin: 12px 0;
+        padding: 15px;
+        border-radius: 12px;
+        background: #4088b2;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 600;
+        transition: transform .15s ease, box-shadow .15s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,.12);
+    }
 
-        .button:hover {
-            transform: scale(1.03);
-        }
+    .button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0,0,0,.18);
+    }
 
-        .footer {
-            margin-top: 25px;
-            font-size: 14px;
-            color: #6b92a8;
-        }
-    </style>
+    .footer {
+        margin-top: 35px;
+        color: #6b92a8;
+        font-size: 14px;
+    }
+</style>
+```
+
 </head>
+
 <body>
 
-    <img src="zuborUS.png" alt="Welcome to Zubor.Us!">
+```
+<img src="zuborUS.png" alt="Welcome to Zubor.Us!">
 
-    <p id="child-age">Calculating...</p>
+<p id="child-age">Calculating...</p>
 
-    <p id="countdown">Calculating...</p>
+<p id="countdown">Calculating...</p>
 
-    ```html
 <div class="links">
+
     <a class="button"
        href="https://cloud.clz.com/babyz/books?collectionStatus=in-collection"
        target="_blank">
@@ -97,69 +105,69 @@
        target="_blank">
         🧸 Dalton's Wishlist
     </a>
+
 </div>
 
-    <div class="footer">
-        Welcome to the Zubor family hub.
-    </div>
+<div class="footer">
+    Welcome to the Zubor family hub.
+</div>
 
-    <script>
-        function updateChildAge() {
-            const birthDate = new Date("June 16, 2025");
-            const today = new Date();
+<script>
+    function updateChildAge() {
+        const birthDate = new Date("June 16, 2025");
+        const today = new Date();
 
-            let totalMonths =
-                (today.getFullYear() - birthDate.getFullYear()) * 12 +
-                (today.getMonth() - birthDate.getMonth());
+        let totalMonths =
+            (today.getFullYear() - birthDate.getFullYear()) * 12 +
+            (today.getMonth() - birthDate.getMonth());
 
-            if (today.getDate() < birthDate.getDate()) {
-                totalMonths--;
-            }
-
-            const years = Math.floor(totalMonths / 12);
-            const months = totalMonths % 12;
-
-            let ageText = "";
-
-            if (years === 0) {
-                ageText = `${months} month${months !== 1 ? "s" : ""} old`;
-            } else if (months === 0) {
-                ageText = `${years} year${years !== 1 ? "s" : ""} old`;
-            } else {
-                ageText =
-                    `${years} year${years !== 1 ? "s" : ""}, ` +
-                    `${months} month${months !== 1 ? "s" : ""} old`;
-            }
-
-            document.getElementById("child-age").innerText =
-                `Dalton is ${ageText}`;
+        if (today.getDate() < birthDate.getDate()) {
+            totalMonths--;
         }
 
-        function updateNextBirthdayCountdown() {
-            const today = new Date();
-            const currentYear = today.getFullYear();
+        const years = Math.floor(totalMonths / 12);
+        const months = totalMonths % 12;
 
-            let nextBirthday = new Date(`June 16, ${currentYear}`);
+        let ageText;
 
-            if (today > nextBirthday) {
-                nextBirthday = new Date(`June 16, ${currentYear + 1}`);
-            }
-
-            const timeDiff = nextBirthday - today;
-            const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-
-            if (daysLeft === 0) {
-                document.getElementById("countdown").innerText =
-                    "🎂 Happy Birthday, Dalton!";
-            } else {
-                document.getElementById("countdown").innerText =
-                    `Days 'Til Dalton's Birthday: ${daysLeft} 🎉`;
-            }
+        if (years === 0) {
+            ageText = `${months} month${months !== 1 ? "s" : ""} old`;
+        } else if (months === 0) {
+            ageText = `${years} year${years !== 1 ? "s" : ""} old`;
+        } else {
+            ageText = `${years} year${years !== 1 ? "s" : ""}, ${months} month${months !== 1 ? "s" : ""} old`;
         }
 
-        updateChildAge();
-        updateNextBirthdayCountdown();
-    </script>
+        document.getElementById("child-age").innerText =
+            `Dalton is ${ageText}`;
+    }
+
+    function updateNextBirthdayCountdown() {
+        const today = new Date();
+        const currentYear = today.getFullYear();
+
+        let nextBirthday = new Date(currentYear, 5, 16); // June = month 5
+
+        if (today > nextBirthday) {
+            nextBirthday = new Date(currentYear + 1, 5, 16);
+        }
+
+        const msPerDay = 1000 * 60 * 60 * 24;
+        const daysLeft = Math.ceil((nextBirthday - today) / msPerDay);
+
+        if (daysLeft === 0) {
+            document.getElementById("countdown").innerText =
+                "🎂 Happy Birthday, Dalton!";
+        } else {
+            document.getElementById("countdown").innerText =
+                `🎉 ${daysLeft} day${daysLeft !== 1 ? "s" : ""} until Dalton's birthday`;
+        }
+    }
+
+    updateChildAge();
+    updateNextBirthdayCountdown();
+</script>
+```
 
 </body>
 </html>
