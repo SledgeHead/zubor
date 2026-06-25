@@ -1,51 +1,30 @@
-```javascript
-/* ==========================================================
-   Zubor.Us
-   Global JavaScript
-   Version 2.0
-   ========================================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     updateGreeting();
     updateAge();
     updateBirthdayCountdown();
 
-    // Refresh every minute so the greeting stays accurate
     setInterval(updateGreeting, 60000);
 });
 
-/* ----------------------------------------------------------
-   Greeting
----------------------------------------------------------- */
-
 function updateGreeting() {
-
     const hour = new Date().getHours();
 
-    let greeting = "Good Evening 🌙";
+    let greeting;
 
     if (hour >= 5 && hour < 12) {
         greeting = "Good Morning ☀️";
-    }
-    else if (hour >= 12 && hour < 18) {
+    } else if (hour >= 12 && hour < 18) {
         greeting = "Good Afternoon 🌤️";
+    } else {
+        greeting = "Good Evening 🌙";
     }
 
-    const greetingElement = document.getElementById("greeting");
-
-    if (greetingElement) {
-        greetingElement.textContent = greeting;
-    }
-
+    document.getElementById("greeting").textContent = greeting;
 }
-
-/* ----------------------------------------------------------
-   Dalton's Age
----------------------------------------------------------- */
 
 function updateAge() {
 
-    const birthDate = new Date(2025, 5, 16); // June 16, 2025
+    const birthDate = new Date(2025, 5, 16);
     const today = new Date();
 
     let totalMonths =
@@ -59,91 +38,39 @@ function updateAge() {
     const years = Math.floor(totalMonths / 12);
     const months = totalMonths % 12;
 
-    let ageText = "";
+    let ageText;
 
     if (years === 0) {
-
-        ageText =
-            `${months} month${months !== 1 ? "s" : ""} old`;
-
-    }
-    else if (months === 0) {
-
-        ageText =
-            `${years} year${years !== 1 ? "s" : ""} old`;
-
-    }
-    else {
-
-        ageText =
-            `${years} year${years !== 1 ? "s" : ""}, ` +
-            `${months} month${months !== 1 ? "s" : ""} old`;
-
+        ageText = `${months} month${months !== 1 ? "s" : ""} old`;
+    } else if (months === 0) {
+        ageText = `${years} year${years !== 1 ? "s" : ""} old`;
+    } else {
+        ageText = `${years} year${years !== 1 ? "s" : ""}, ${months} month${months !== 1 ? "s" : ""} old`;
     }
 
-    const ageElement = document.getElementById("child-age");
-
-    if (ageElement) {
-        ageElement.textContent = `Dalton is ${ageText}`;
-    }
-
+    document.getElementById("child-age").textContent =
+        `Dalton is ${ageText}`;
 }
-
-/* ----------------------------------------------------------
-   Birthday Countdown
----------------------------------------------------------- */
 
 function updateBirthdayCountdown() {
 
     const today = new Date();
 
-    const currentYear = today.getFullYear();
-
-    let nextBirthday = new Date(currentYear, 5, 16);
+    let nextBirthday = new Date(today.getFullYear(), 5, 16);
 
     if (today > nextBirthday) {
-
-        nextBirthday = new Date(currentYear + 1, 5, 16);
-
+        nextBirthday = new Date(today.getFullYear() + 1, 5, 16);
     }
 
-    const oneDay = 1000 * 60 * 60 * 24;
-
-    const daysLeft =
-        Math.ceil((nextBirthday - today) / oneDay);
-
-    const countdownElement =
-        document.getElementById("countdown");
-
-    if (!countdownElement) return;
+    const daysLeft = Math.ceil(
+        (nextBirthday - today) / (1000 * 60 * 60 * 24)
+    );
 
     if (daysLeft === 0) {
-
-        countdownElement.textContent =
+        document.getElementById("countdown").textContent =
             "🎂 Happy Birthday, Dalton!";
-
-    }
-    else {
-
-        countdownElement.textContent =
+    } else {
+        document.getElementById("countdown").textContent =
             `🎉 ${daysLeft} day${daysLeft !== 1 ? "s" : ""} until Dalton's birthday`;
-
     }
-
 }
-
-/* ----------------------------------------------------------
-   Future Features
----------------------------------------------------------- */
-
-// We'll eventually add:
-//
-// • Featured Book
-// • Quote of the Day
-// • Current Favorite
-// • Holiday Themes
-// • Seasonal Decorations
-// • Random Family Photo
-// • "On This Day" Memories
-//
-```
