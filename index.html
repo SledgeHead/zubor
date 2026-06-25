@@ -1,155 +1,227 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zubor Family Hub</title>
 
-<link rel="icon" type="image/png" href="favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box}
-body{
-    margin:0;
-    min-height:100vh;
-    font-family:'Quicksand',Arial,sans-serif;
-    background:#edfcfc;
-    color:#4088b2;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-.container{
-    width:min(92%,520px);
-    text-align:center;
-    padding:30px 0 40px;
-}
-.logo{
-    width:100%;
-    max-width:380px;
-    margin:0 auto 20px;
-    display:block;
-}
-.hero{
-    background:#fff;
-    border-radius:22px;
-    padding:22px;
-    box-shadow:0 12px 30px rgba(64,136,178,.18);
-    margin-bottom:28px;
-}
-#child-age{
-    font-size:1.8rem;
-    font-weight:700;
-    margin:0 0 8px;
-}
-#countdown{
-    font-size:1.1rem;
-    margin:0;
-}
-.since{
-    margin-top:16px;
-    color:#7c9eb2;
-    font-size:.95rem;
-}
-.links{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
-.button{
-    display:block;
-    background:#4088b2;
-    color:#fff;
-    text-decoration:none;
-    padding:16px;
-    border-radius:14px;
-    font-size:1.08rem;
-    font-weight:700;
-    box-shadow:0 8px 18px rgba(64,136,178,.25);
-    transition:.2s ease;
-}
-.button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 14px 24px rgba(64,136,178,.35);
-}
-.footer{
-    margin-top:28px;
-    color:#6b92a8;
-    font-size:.9rem;
-}
-</style>
+    <title>Zubor.Us</title>
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <div class="container">
 
-<img class="logo" src="zuborUS.png" alt="Zubor.us">
+    <section class="hero">
 
-<div class="hero">
-    <div id="child-age">Calculating...</div>
-    <div id="countdown">Calculating...</div>
-    <div class="since">❤️ Since June 16, 2025</div>
+        <div>
+
+            <img
+                class="logo"
+                src="images/zuborUS.png"
+                alt="Zubor.Us">
+
+            <div class="tagline">
+                Growing one adventure at a time.
+            </div>
+
+            <h1 id="greeting">
+                Welcome!
+            </h1>
+
+            <div class="info-card">
+
+                <div id="child-age">
+                    Calculating...
+                </div>
+
+                <div id="countdown">
+                    Calculating...
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <img
+                class="portrait"
+                src="images/daltonportrait.png"
+                alt="Dalton">
+
+        </div>
+
+    </section>
+
+
+    <h2 class="section-title">
+        Explore
+    </h2>
+
+
+    <section class="card-grid">
+
+        <a class="card"
+           href="https://cloud.clz.com/babyz/books?collectionStatus=in-collection"
+           target="_blank">
+
+            <div class="card-icon">
+                📚
+            </div>
+
+            <h3>
+                Dalton's Library
+            </h3>
+
+            <p>
+                Browse every book in Dalton's growing collection.
+            </p>
+
+            <div class="card-arrow">
+                →
+            </div>
+
+        </a>
+
+
+        <a class="card"
+           href="growth.html">
+
+            <div class="card-icon">
+                📈
+            </div>
+
+            <h3>
+                Growing Up
+            </h3>
+
+            <p>
+                Height, weight, milestones, and favorite things.
+            </p>
+
+            <div class="card-arrow">
+                →
+            </div>
+
+        </a>
+
+
+        <a class="card"
+           href="https://www.babylist.com/dalton-zubor"
+           target="_blank">
+
+            <div class="card-icon">
+                🧸
+            </div>
+
+            <h3>
+                Wish List
+            </h3>
+
+            <p>
+                Birthday and holiday gift ideas.
+            </p>
+
+            <div class="card-arrow">
+                →
+            </div>
+
+        </a>
+
+
+        <a class="card"
+           href="#">
+
+            <div class="card-icon">
+                📸
+            </div>
+
+            <h3>
+                Family Gallery
+            </h3>
+
+            <p>
+                Favorite memories from our adventures together.
+            </p>
+
+            <div class="card-arrow">
+                →
+            </div>
+
+        </a>
+
+
+        <a class="card"
+           href="#">
+
+            <div class="card-icon">
+                🎬
+            </div>
+
+            <h3>
+                Movie Night
+            </h3>
+
+            <p>
+                Jason's movie recommendations and Letterboxd.
+            </p>
+
+            <div class="card-arrow">
+                →
+            </div>
+
+        </a>
+
+
+        <a class="card"
+           href="#">
+
+            <div class="card-icon">
+                📷
+            </div>
+
+            <h3>
+                Stephanie
+            </h3>
+
+            <p>
+                Follow Stephanie on Instagram.
+            </p>
+
+            <div class="card-arrow">
+                →
+            </div>
+
+        </a>
+
+    </section>
+
+
+    <footer>
+
+        Adventure awaits.
+
+        <small>
+            Welcome to Zubor.Us
+        </small>
+
+    </footer>
+
 </div>
 
-<div class="links">
-    <a class="button" href="https://cloud.clz.com/babyz/books?collectionStatus=in-collection" target="_blank">📚 Dalton's Library</a>
-
-    <a class="button" href="growth.html">📈 Growth Tracker</a>
-
-    <a class="button" href="https://www.babylist.com/dalton-zubor" target="_blank">🧸 Dalton's Wishlist</a>
-</div>
-
-<div class="footer">
-    Welcome to the Zubor family hub.
-</div>
-
-</div>
-
-<script>
-function updateChildAge(){
-    const birth=new Date(2025,5,16);
-    const today=new Date();
-
-    let months=(today.getFullYear()-birth.getFullYear())*12+
-               (today.getMonth()-birth.getMonth());
-
-    if(today.getDate()<birth.getDate()) months--;
-
-    const years=Math.floor(months/12);
-    const rem=months%12;
-
-    let text="";
-    if(years===0){
-        text=`${rem} month${rem!==1?"s":""} old`;
-    }else if(rem===0){
-        text=`${years} year${years!==1?"s":""} old`;
-    }else{
-        text=`${years} year${years!==1?"s":""}, ${rem} month${rem!==1?"s":""} old`;
-    }
-
-    document.getElementById("child-age").textContent=`Dalton is ${text}`;
-}
-
-function updateCountdown(){
-    const today=new Date();
-    let next=new Date(today.getFullYear(),5,16);
-
-    if(today>next){
-        next=new Date(today.getFullYear()+1,5,16);
-    }
-
-    const days=Math.ceil((next-today)/(1000*60*60*24));
-
-    document.getElementById("countdown").textContent=
-        days===0
-        ? "🎂 Happy Birthday, Dalton!"
-        : `🎉 ${days} day${days!==1?"s":""} until Dalton's birthday`;
-}
-
-updateChildAge();
-updateCountdown();
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
+```
