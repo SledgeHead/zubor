@@ -1,1 +1,405 @@
+```css
+/* ==========================================================
+   Zubor.Us
+   Global Styles
+   Version 2.0
+   ========================================================== */
+
+:root{
+    --forest:#3F5A36;
+    --forest-dark:#2D4227;
+    --forest-light:#628357;
+
+    --cream:#F8F7F2;
+    --white:#FFFFFF;
+
+    --purple:#800080;
+
+    --text:#303030;
+    --muted:#6D6D6D;
+
+    --shadow:0 12px 30px rgba(0,0,0,.12);
+    --radius:22px;
+
+    --max-width:1180px;
+}
+
+/* ---------- Reset ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(
+        to bottom,
+        #fdfdfb 0%,
+        var(--cream) 100%
+    );
+
+    color:var(--text);
+
+    font-family:'Quicksand',sans-serif;
+
+    min-height:100vh;
+
+    line-height:1.5;
+}
+
+/* ---------- Main Layout ---------- */
+
+.container{
+    width:min(92%,var(--max-width));
+    margin:auto;
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        420px;
+
+    gap:60px;
+
+    align-items:center;
+
+    min-height:85vh;
+
+    padding:60px 0;
+}
+
+/* ---------- Branding ---------- */
+
+.logo{
+
+    width:340px;
+
+    max-width:100%;
+
+    margin-bottom:20px;
+}
+
+.tagline{
+
+    color:var(--forest);
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+    margin-bottom:40px;
+}
+
+/* ---------- Greeting ---------- */
+
+#greeting{
+
+    color:var(--forest);
+
+    font-size:2.4rem;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+/* ---------- Info Card ---------- */
+
+.info-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:35px;
+}
+
+#child-age{
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    color:var(--forest);
+
+    margin-bottom:10px;
+}
+
+#countdown{
+
+    color:var(--muted);
+
+    font-size:1.1rem;
+}
+
+/* ---------- Portrait ---------- */
+
+.portrait{
+
+    width:340px;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:8px solid var(--forest);
+
+    box-shadow:var(--shadow);
+
+    display:block;
+
+    margin:auto;
+
+    transition:.35s ease;
+}
+
+.portrait:hover{
+
+    transform:scale(1.03);
+}
+
+/* ---------- Section Headings ---------- */
+
+.section-title{
+
+    font-size:2rem;
+
+    color:var(--forest);
+
+    font-weight:700;
+
+    margin-bottom:25px;
+}
+
+/* ---------- Card Grid ---------- */
+
+.card-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(260px,1fr)
+        );
+
+    gap:22px;
+
+    margin-bottom:70px;
+}
+
+/* ---------- Cards ---------- */
+
+.card{
+
+    background:white;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.card:hover{
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.16);
+}
+
+.card-icon{
+
+    font-size:2.3rem;
+
+    margin-bottom:18px;
+}
+
+.card h3{
+
+    color:var(--forest);
+
+    font-size:1.35rem;
+
+    margin-bottom:12px;
+}
+
+.card p{
+
+    color:var(--muted);
+
+    margin-bottom:18px;
+}
+
+.card-arrow{
+
+    color:var(--forest);
+
+    font-size:1.5rem;
+
+    font-weight:bold;
+}
+
+/* ---------- Navigation ---------- */
+
+nav{
+
+    width:100%;
+
+    padding:20px 0;
+}
+
+nav ul{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:30px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:var(--forest);
+
+    font-weight:700;
+
+    transition:.2s;
+}
+
+nav a:hover{
+
+    color:var(--purple);
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+
+    text-align:center;
+
+    padding:45px 20px;
+
+    color:var(--forest);
+
+    font-weight:700;
+}
+
+footer small{
+
+    display:block;
+
+    color:var(--muted);
+
+    margin-top:10px;
+}
+
+/* ---------- Utility ---------- */
+
+.center{
+
+    text-align:center;
+}
+
+.hidden{
+
+    display:none;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width:950px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+padding:50px 0;
+}
+
+.logo{
+
+margin:auto auto 20px;
+}
+
+.portrait{
+
+width:260px;
+}
+
+#greeting{
+
+font-size:2rem;
+}
+
+.section-title{
+
+text-align:center;
+}
+
+}
+
+@media (max-width:650px){
+
+body{
+
+font-size:16px;
+}
+
+.logo{
+
+width:260px;
+}
+
+.info-card{
+
+padding:22px;
+}
+
+.card{
+
+padding:22px;
+}
+
+.card-grid{
+
+grid-template-columns:1fr;
+}
+
+}
+```
 
