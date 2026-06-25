@@ -10,6 +10,7 @@
 
 <style>
 *{box-sizing:border-box}
+
 body{
     margin:0;
     min-height:100vh;
@@ -20,59 +21,78 @@ body{
     align-items:center;
     justify-content:center;
 }
+
 .container{
-    width:min(92%,520px);
+    width:min(92%,560px);
     text-align:center;
     padding:30px 0 40px;
 }
+
 .logo{
     width:100%;
-    max-width:380px;
+    max-width:360px;
     margin:0 auto 20px;
     display:block;
 }
+
 .hero{
     background:#fff;
     border-radius:22px;
-    padding:22px;
+    padding:24px;
     box-shadow:0 12px 30px rgba(64,136,178,.18);
     margin-bottom:28px;
 }
+
 #child-age{
     font-size:1.8rem;
     font-weight:700;
-    margin:0 0 8px;
+    margin-bottom:8px;
 }
+
 #countdown{
     font-size:1.1rem;
-    margin:0;
 }
+
 .since{
     margin-top:16px;
     color:#7c9eb2;
     font-size:.95rem;
 }
+
 .links{
     display:flex;
     flex-direction:column;
     gap:14px;
 }
+
 .button{
     display:block;
     background:#4088b2;
     color:#fff;
     text-decoration:none;
-    padding:16px;
+    padding:16px 18px;
     border-radius:14px;
-    font-size:1.08rem;
-    font-weight:700;
     box-shadow:0 8px 18px rgba(64,136,178,.25);
     transition:.2s ease;
+    text-align:left;
 }
+
 .button:hover{
     transform:translateY(-3px);
     box-shadow:0 14px 24px rgba(64,136,178,.35);
 }
+
+.button-title{
+    font-size:1.08rem;
+    font-weight:700;
+}
+
+.button-subtitle{
+    font-size:.88rem;
+    opacity:.9;
+    margin-top:2px;
+}
+
 .footer{
     margin-top:28px;
     color:#6b92a8;
@@ -80,6 +100,7 @@ body{
 }
 </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -93,21 +114,61 @@ body{
 </div>
 
 <div class="links">
-    <a class="button" href="https://cloud.clz.com/babyz/books?collectionStatus=in-collection" target="_blank">📚 Dalton's Library</a>
 
-    <a class="button" href="growth.html">📈 Growth Tracker</a>
+<a class="button"
+href="https://www.babylist.com/dalton-zubor"
+target="_blank">
+<div class="button-title">🧸 Dalton's Wishlist</div>
+<div class="button-subtitle">Birthday & holiday gift ideas</div>
+</a>
 
-    <a class="button" href="https://www.babylist.com/dalton-zubor" target="_blank">🧸 Dalton's Wishlist</a>
+<a class="button"
+href="growth.html">
+<div class="button-title">📈 Growth Tracker</div>
+<div class="button-subtitle">Height, weight & milestones</div>
+</a>
+
+<a class="button"
+href="https://cloud.clz.com/babyz/books?collectionStatus=in-collection"
+target="_blank">
+<div class="button-title">📚 Dalton's Library</div>
+<div class="button-subtitle">Browse his growing book collection</div>
+</a>
+
+<a class="button"
+href="https://letterboxd.com/sledgehead/"
+target="_blank">
+<div class="button-title">🎬 Jason's Letterboxd</div>
+<div class="button-subtitle">Movies, reviews & watchlists</div>
+</a>
+
+<a class="button"
+href="https://www.instagram.com/nonsensicalsteph/"
+target="_blank">
+<div class="button-title">📷 Stephanie's Instagram</div>
+<div class="button-subtitle">Life through Steph's lens</div>
+</a>
+
+<a class="button"
+href="https://www.instagram.com/booandzero/"
+target="_blank">
+<div class="button-title">🐶 Boo & Zero</div>
+<div class="button-subtitle">Our four-legged adventures</div>
+</a>
+
 </div>
 
 <div class="footer">
-    Welcome to the Zubor family hub.
+Adventure awaits.<br>
+❤️ The Zubor Family
 </div>
 
 </div>
 
 <script>
+
 function updateChildAge(){
+
     const birth=new Date(2025,5,16);
     const today=new Date();
 
@@ -120,11 +181,14 @@ function updateChildAge(){
     const rem=months%12;
 
     let text="";
+
     if(years===0){
         text=`${rem} month${rem!==1?"s":""} old`;
-    }else if(rem===0){
+    }
+    else if(rem===0){
         text=`${years} year${years!==1?"s":""} old`;
-    }else{
+    }
+    else{
         text=`${years} year${years!==1?"s":""}, ${rem} month${rem!==1?"s":""} old`;
     }
 
@@ -132,6 +196,7 @@ function updateChildAge(){
 }
 
 function updateCountdown(){
+
     const today=new Date();
     let next=new Date(today.getFullYear(),5,16);
 
@@ -149,6 +214,7 @@ function updateCountdown(){
 
 updateChildAge();
 updateCountdown();
+
 </script>
 
 </body>
