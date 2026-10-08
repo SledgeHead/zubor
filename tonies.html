@@ -38,7 +38,7 @@ h1{margin:5px 0 5px;font-size:2rem}
 .card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 20px rgba(64,136,178,.13);transition:.2s ease}
 .card:hover{transform:translateY(-3px);box-shadow:0 14px 26px rgba(64,136,178,.2)}
 .art{aspect-ratio:1/1;background:linear-gradient(145deg,#f5fbfc,#dceff3);display:flex;align-items:center;justify-content:center;padding:18px;overflow:hidden}
-.art img{width:108px !important;height:128px !important;object-fit:contain;border-radius:27px !important;clip-path:inset(0 round 27px);overflow:hidden;display:block;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16)}
+.art img{width:150px !important;height:150px !important;object-fit:contain;border-radius:20px !important;clip-path:inset(0 round 20px);overflow:hidden;display:block;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16)}
 .placeholder{width:108px;height:128px;border-radius:27px 27px 31px 31px;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);display:flex;align-items:center;justify-content:center;font-size:3rem}
 .card-body{padding:14px}
 .card h3{margin:0 0 3px;font-size:1.04rem;line-height:1.2}
@@ -153,8 +153,8 @@ function card(item){
   const primary=item.image || "";
   const fallback=item.remoteImage || "";
   const art=primary
-    ? `<img src="${primary}" alt="${item.name}" class="tonie-image" style="width:108px !important;height:128px !important;object-fit:contain;border-radius:27px !important;clip-path:inset(0 round 27px);overflow:hidden;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);" onerror="if(this.dataset.fallbackTried!=="1" && this.dataset.fallback){this.dataset.fallbackTried="1";this.src=this.dataset.fallback;}else{this.style.display="none";this.nextElementSibling.style.display="flex"}" data-fallback="${fallback}"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
-    : (fallback ? `<img src="${fallback}" alt="${item.name}" class="tonie-image" style="width:108px !important;height:128px !important;object-fit:contain;border-radius:27px !important;clip-path:inset(0 round 27px);overflow:hidden;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>` : `<div class="placeholder">${emojiFor(item)}</div>`);
+    ? `<img src="${primary}" alt="${item.name}" class="tonie-image" style="width:150px !important;height:150px !important;object-fit:contain;border-radius:20px !important;clip-path:inset(0 round 20px);overflow:hidden;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);" onerror="if(this.dataset.fallbackTried!=="1" && this.dataset.fallback){this.dataset.fallbackTried="1";this.src=this.dataset.fallback;}else{this.style.display="none";this.nextElementSibling.style.display="flex"}" data-fallback="${fallback}"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
+    : (fallback ? `<img src="${fallback}" alt="${item.name}" class="tonie-image" style="width:150px !important;height:150px !important;object-fit:contain;border-radius:20px !important;clip-path:inset(0 round 20px);overflow:hidden;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>` : `<div class="placeholder">${emojiFor(item)}</div>`);
 
   const details=[
     item.age ? `Age ${item.age}` : "",
