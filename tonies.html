@@ -140,11 +140,7 @@ h1{margin:5px 0 5px;font-size:2rem}
   </div>
   <div id="filters" class="filters">
     <button class="filter active" data-filter="All">All</button>
-    <button class="filter" data-filter="Disney">Disney</button>
-    <button class="filter" data-filter="Kids & Learning">Kids & Learning</button>
-    <button class="filter" data-filter="Pokémon">Pokémon</button>
-    <button class="filter" data-filter="Sesame Street">Sesame Street</button>
-    <button class="filter" data-filter="Creative">Creative</button>
+    <span id="category-filters" class="category-filters"></span>
     <span class="wishlist-wrap"><a class="wishlist-link" href="https://my.babylist.com/dalton-zubor" target="_blank" rel="noopener">Wishlist</a></span>
   </div>
 </section>
@@ -178,9 +174,25 @@ const daltonTonies = window.daltonTonies || [];
 const collection=document.getElementById("collection");
 const search=document.getElementById("search");
 const resultCount=document.getElementById("resultCount");
-const filters=document.querySelectorAll(".filter");
+const filtersContainer=document.getElementById("filters");
+const categoryFilters=document.getElementById("category-filters");
 const sort=document.getElementById("sort");
 let activeFilter="All";
+
+// Generate category buttons from tonies-data.js. New categories require no HTML edits.
+// All stays first; Creative stays last; everything else is alphabetical.
+const categories=[...new Set(daltonTonies.map(item=>item.category).filter(Boolean))]
+  .sort((a,b)=>{
+    if(a==="Creative") return 1;
+    if(b==="Creative") return -1;
+    return a.localeCompare(b);
+  });
+
+categoryFilters.innerHTML=categories.map(category=>
+  `<button class="filter" data-filter="${category.replace(/"/g,"&quot;")}">${category}</button>`
+).join("");
+
+const filters=filtersContainer.querySelectorAll(".filter");
 
 function emojiFor(item){
   if(item.category==="Pokémon") return "⚡";
