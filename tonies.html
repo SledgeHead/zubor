@@ -69,9 +69,10 @@ h1{margin:5px 0 5px;font-size:2rem}
   <img class="logo" src="zuborUS.png" alt="Zubor.us">
   <h1>🎧 Dalton's Tonies</h1>
   <p class="subtitle">Stories, songs & adventures</p>
-  <div class="stats">
-    <div class="stat"><strong id="ownedCount">0</strong><span>Tonies Owned</span></div>
-    <div class="stat"><strong id="categoryCount">0</strong><span>Categories</span></div>
+  <div class="stats" style="grid-template-columns:1fr">
+    <div class="stat" style="max-width:340px;width:100%;margin:auto">
+      <strong id="ownedCount">0</strong><span>Total Tonies</span>
+    </div>
   </div>
 </section>
 
@@ -115,13 +116,14 @@ h1{margin:5px 0 5px;font-size:2rem}
 <section class="section-note">
   <strong>🎁 Dalton's Tonies Wishlist</strong><br>
   Want to help Dalton add to his collection?<br>
-  <a id="wishlistLink" href="https://www.babylist.com/" target="_blank" rel="noopener"
+  <a id="wishlistLink" href="https://my.babylist.com/dalton-zubor" target="_blank" rel="noopener"
      style="display:inline-block;margin-top:10px;background:#4088b2;color:#fff;text-decoration:none;padding:9px 15px;border-radius:999px;font-weight:700">
     View Dalton's Wishlist →
   </a>
 </section>
 
 <div class="footer">
+  Product images are hosted by their respective manufacturers/brand owners.<br>
   Adventure awaits.<br>
   ❤️ The Zubor Family
 </div>
@@ -198,9 +200,7 @@ function render(){
 
 function updateStats(){
   const owned=daltonTonies.filter(x=>x.status==="owned");
-  const categories=new Set(owned.map(x=>x.category));
   document.getElementById("ownedCount").textContent=owned.length;
-  document.getElementById("categoryCount").textContent=categories.size;
 }
 
 filters.forEach(button=>{
