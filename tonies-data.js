@@ -300,6 +300,6 @@ window.daltonTonies = [
 window.daltonToniebox = {
   name: "Toniebox 2",
   color: "Lightning Yellow",
-  acquired: "October 7, 2026",
+  acquired: "December 25, 2026",
   source: "Pokémon Toniebox 2 Starter Set"
 };
