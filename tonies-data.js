@@ -2,7 +2,7 @@
 // Public catalog data only — no purchase prices, order numbers, or gift-card details.
 // Add future Tonies to this array and the page will pick them up automatically.
 
-const daltonTonies = [
+window.daltonTonies = [
   {
     id: "lilo-stitch",
     name: "Stitch",
@@ -17,6 +17,7 @@ const daltonTonies = [
     runtime: "29 min",
     content: "Adventure & songs",
     image: "images/tonies/lilo-stitch.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Lilo--Stitch-10000936-TB2Hero2.png?width=1200",
     featured: true
   },
   {
@@ -33,6 +34,7 @@ const daltonTonies = [
     runtime: "36 min",
     content: "Calming stories & sounds",
     image: "images/tonies/simba-cuddle.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Cuddle-Simba-11003866-TB2Hero2.png?width=1200",
     featured: true
   },
   {
@@ -48,6 +50,7 @@ const daltonTonies = [
     runtime: "Up to 90 min",
     content: "Your own audio",
     image: "images/tonies/vampire-creative.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Vampire-10000547-TB2Hero2.png?width=1200",
     featured: true
   },
   {
@@ -63,11 +66,13 @@ const daltonTonies = [
     runtime: "42 min",
     content: "Songs, movement & education",
     image: "images/tonies/dorothy-dinosaur.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Dorothy-The-Dinosaur-11004232-TB2Hero2.png?width=1200",
     featured: true
   },
   {
     id: "pokemon-pikachu",
     name: "Pikachu",
+    generation: "Gen 1",
     displayTitle: "Pokémon Adventure",
     officialName: "Pokémon Pikachu Tonie",
     brand: "Pokémon",
@@ -75,15 +80,17 @@ const daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "",
+    age: "5+",
     runtime: "78 min",
-    content: "Adventure & exploration",
+    content: "Mysteries, Trainer Academy facts & a Pokémon battle",
     image: "images/tonies/pokemon-pikachu.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Pikachu-11000561-TB2Hero2.png?width=1200",
     featured: true
   },
   {
     id: "pokemon-bulbasaur",
     name: "Bulbasaur",
+    generation: "Gen 1",
     displayTitle: "Pokémon Adventure",
     officialName: "Pokémon Bulbasaur Tonie",
     brand: "Pokémon",
@@ -91,15 +98,17 @@ const daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "",
+    age: "5+",
     runtime: "77 min",
-    content: "Adventure & exploration",
+    content: "Clever adventures, Trainer Academy facts & a Pokémon battle",
     image: "images/tonies/pokemon-bulbasaur.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Bulbasaur-11003603-TB2Hero2.png?width=1200",
     featured: true
   },
   {
     id: "pokemon-charmander",
     name: "Charmander",
+    generation: "Gen 1",
     displayTitle: "Pokémon Adventure",
     officialName: "Pokémon Charmander Tonie",
     brand: "Pokémon",
@@ -107,15 +116,17 @@ const daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "",
+    age: "5+",
     runtime: "79 min",
-    content: "Adventure & exploration",
+    content: "Fiery adventures, Trainer Academy facts & a Pokémon battle",
     image: "images/tonies/pokemon-charmander.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Charmander-11003600-TB2Hero2.png?width=1200",
     featured: true
   },
   {
     id: "pokemon-squirtle",
     name: "Squirtle",
+    generation: "Gen 1",
     displayTitle: "Pokémon Adventure",
     officialName: "Pokémon Squirtle Tonie",
     brand: "Pokémon",
@@ -123,10 +134,11 @@ const daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "",
+    age: "5+",
     runtime: "67 min",
-    content: "Adventure & exploration",
+    content: "Seaside adventures, Trainer Academy facts & a Pokémon battle",
     image: "images/tonies/pokemon-squirtle.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Squirtle-11003602-TB2Hero2.png?width=1200",
     featured: true
   },
   {
@@ -142,7 +154,8 @@ const daltonTonies = [
     age: "5+",
     runtime: "47 min",
     content: "Adventure & sing-along",
-    image: "images/tonies/hercules.png"
+    image: "images/tonies/hercules.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Hercules-10001698-TB2Hero2.png?width=1200"
   },
   {
     id: "jungle-book",
@@ -157,7 +170,8 @@ const daltonTonies = [
     age: "3+",
     runtime: "15–30 min",
     content: "Adventure & songs",
-    image: "images/tonies/jungle-book.png"
+    image: "images/tonies/jungle-book.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/The-Jungle-Book-10000497-TB2Hero2.png?width=1200"
   },
   {
     id: "monsters-inc",
@@ -172,7 +186,8 @@ const daltonTonies = [
     age: "5+",
     runtime: "33 min",
     content: "Adventure & songs",
-    image: "images/tonies/monsters-inc.png"
+    image: "images/tonies/monsters-inc.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Monsters_-Inc.-10000517-TB2Hero1.png?width=1200"
   },
   {
     id: "mickey-mouse-clubhouse",
@@ -187,7 +202,8 @@ const daltonTonies = [
     age: "1+",
     runtime: "38 min",
     content: "Adventure & songs",
-    image: "images/tonies/mickey-mouse-clubhouse.png"
+    image: "images/tonies/mickey-mouse-clubhouse.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Mickey-Clubhouse-10001072-TB2Hero2.png?width=1200"
   },
   {
     id: "woody",
@@ -202,7 +218,8 @@ const daltonTonies = [
     age: "3+",
     runtime: "",
     content: "Toy Story",
-    image: "images/tonies/woody.png"
+    image: "images/tonies/woody.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Woody-10000511-TB2Hero2.png?width=1200"
   },
   {
     id: "ms-rachel",
@@ -216,7 +233,8 @@ const daltonTonies = [
     age: "1+",
     runtime: "About 50 min",
     content: "Songs & learning",
-    image: "images/tonies/ms-rachel.png"
+    image: "images/tonies/ms-rachel.png",
+    remoteImage: "https://tonies.com.au/cdn/shop/files/Ms-Rachel-11002272-TB2Hero1.png?width=1200"
   },
   {
     id: "cookie-monster",
@@ -230,7 +248,8 @@ const daltonTonies = [
     age: "3+",
     runtime: "30–45 min",
     content: "Healthy habits, education & songs",
-    image: "images/tonies/cookie-monster.png"
+    image: "images/tonies/cookie-monster.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Cookie-Monster-10000630-TB2Hero2.png?width=1200"
   },
   {
     id: "blues-clues",
@@ -244,7 +263,8 @@ const daltonTonies = [
     age: "3+",
     runtime: "57 min",
     content: "Learning, problem-solving & songs",
-    image: "images/tonies/blues-clues.png"
+    image: "images/tonies/blues-clues.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/Blue_s-Clues-10000777-TB2Hero2.png?width=1200"
   },
   {
     id: "nightmare-before-christmas",
@@ -259,7 +279,8 @@ const daltonTonies = [
     age: "6+",
     runtime: "47 min",
     content: "Story & songs",
-    image: "images/tonies/nightmare-before-christmas.png"
+    image: "images/tonies/nightmare-before-christmas.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/The-Nightmare-Before-Christmas-10001358-TB2Hero2.png?width=1200"
   },
   {
     id: "lion-king",
@@ -274,7 +295,8 @@ const daltonTonies = [
     age: "3+",
     runtime: "30–45 min",
     content: "Story & songs",
-    image: "images/tonies/lion-king.png"
+    image: "images/tonies/lion-king.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/The-Lion-King-10000498-TB2Hero2.png?width=1200"
   },
   {
     id: "incredibles",
@@ -289,7 +311,8 @@ const daltonTonies = [
     age: "6+",
     runtime: "60+ min",
     content: "Adventure",
-    image: "images/tonies/incredibles.png"
+    image: "images/tonies/incredibles.png",
+    remoteImage: "https://us.tonies.com/cdn/shop/files/The-Incredibles-10001301-TB2Hero2.png?width=1200"
   }
 ];
 
