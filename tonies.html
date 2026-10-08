@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dalton's Tonies | Zubor.us</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#edfcfc;color:#4088b2;font-family:'Quicksand',Arial,sans-serif}
+.container{width:min(94%,1080px);margin:auto;padding:22px 0 46px}
+.back{display:inline-block;margin:4px 0 16px;color:#4088b2;text-decoration:none;font-weight:700}
+.hero,.controls,.box-card,.section-note{background:#fff;border-radius:22px;box-shadow:0 12px 30px rgba(64,136,178,.14)}
+.hero{text-align:center;padding:25px;margin-bottom:18px}
+.logo{width:145px;max-width:55%;margin:0 auto 8px;display:block}
+h1{margin:5px 0 5px;font-size:2rem}
+.subtitle{margin:0;color:#6b92a8}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.stat{background:#f6fbfc;border-radius:15px;padding:12px}
+.stat strong{display:block;font-size:1.5rem}
+.stat span{font-size:.8rem;color:#6b92a8}
+.controls{padding:16px;margin-bottom:20px}
+.search{width:100%;border:2px solid #dceff3;border-radius:13px;padding:12px 14px;font:inherit;color:#4088b2;outline:none}
+.search:focus{border-color:#4088b2}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.filter{border:0;background:#eaf7f9;color:#4088b2;padding:8px 12px;border-radius:999px;font:inherit;font-weight:700;cursor:pointer}
+.filter.active{background:#4088b2;color:#fff}
+.box-card{padding:18px;margin-bottom:22px;display:flex;align-items:center;gap:18px}
+.box-art{width:86px;height:86px;flex:0 0 86px;border-radius:24px;background:linear-gradient(145deg,#ffe95b,#f7c928);display:flex;align-items:center;justify-content:center;font-size:2.8rem;box-shadow:inset 0 -8px 15px rgba(0,0,0,.08)}
+.box-card h2{margin:0 0 4px;font-size:1.25rem}
+.box-card p{margin:3px 0;color:#6b92a8}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 2px 12px}
+.section-title h2{margin:0;font-size:1.35rem}
+.section-count{color:#7c9eb2;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 20px rgba(64,136,178,.13);transition:.2s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 26px rgba(64,136,178,.2)}
+.art{aspect-ratio:1/1;background:linear-gradient(145deg,#f5fbfc,#dceff3);display:flex;align-items:center;justify-content:center;padding:18px}
+.placeholder{width:108px;height:128px;border-radius:27px 27px 31px 31px;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);display:flex;align-items:center;justify-content:center;font-size:3rem}
+.card-body{padding:14px}
+.card h3{margin:0 0 3px;font-size:1.04rem;line-height:1.2}
+.brand{margin:0 0 10px;color:#7c9eb2;font-size:.82rem}
+.badges{display:flex;flex-wrap:wrap;gap:5px}
+.badge{background:#4088b2;color:#fff;padding:4px 8px;border-radius:999px;font-size:.7rem;font-weight:700}
+.badge.soft{background:#eaf7f9;color:#4088b2}
+.details{margin-top:10px;padding-top:9px;border-top:1px solid #edf4f5;color:#6b92a8;font-size:.78rem;line-height:1.5}
+.empty{background:#fff;border-radius:18px;padding:28px;text-align:center;color:#6b92a8}
+.section-note{margin-top:22px;padding:17px;text-align:center;color:#6b92a8}
+.section-note strong{color:#4088b2}
+.footer{text-align:center;color:#6b92a8;font-size:.9rem;margin-top:28px}
+@media(max-width:560px){
+  .container{width:min(92%,560px)}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats .stat:last-child{grid-column:1/-1}
+  h1{font-size:1.7rem}
+  .box-card{align-items:flex-start}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<a class="back" href="index.html">← Back to Home</a>
+
+<section class="hero">
+  <img class="logo" src="zuborUS.png" alt="Zubor.us">
+  <h1>🎧 Dalton's Tonies</h1>
+  <p class="subtitle">Stories, songs & adventures</p>
+  <div class="stats">
+    <div class="stat"><strong id="ownedCount">0</strong><span>Tonies Owned</span></div>
+    <div class="stat"><strong id="categoryCount">0</strong><span>Categories</span></div>
+    <div class="stat"><strong id="wishlistCount">0</strong><span>Wishlist</span></div>
+  </div>
+</section>
+
+<section class="box-card">
+  <div class="box-art">⚡</div>
+  <div>
+    <h2>Dalton's Toniebox 2</h2>
+    <p><strong>Lightning Yellow</strong> · Pokémon Starter Set</p>
+    <p>Added October 7, 2026 · The beginning of Dalton's Tonie collection.</p>
+  </div>
+</section>
+
+<section class="controls">
+  <input id="search" class="search" type="search" placeholder="Search Dalton's Tonies…">
+  <div id="filters" class="filters">
+    <button class="filter active" data-filter="All">All</button>
+    <button class="filter" data-filter="Pokémon">Pokémon</button>
+    <button class="filter" data-filter="Disney">Disney</button>
+    <button class="filter" data-filter="Kids & Learning">Kids & Learning</button>
+    <button class="filter" data-filter="Creative">Creative</button>
+  </div>
+</section>
+
+<div class="section-title">
+  <h2>⭐ Dalton's Collection</h2>
+  <span class="section-count" id="resultCount"></span>
+</div>
+
+<section id="collection" class="grid"></section>
+
+<div class="section-note">
+  <strong>Collection started October 7, 2026.</strong><br>
+  This page is Dalton's public collection catalog. Purchase details stay private.
+</div>
+
+<div class="footer">
+  Adventure awaits.<br>
+  ❤️ The Zubor Family
+</div>
+
+</div>
+
+<script src="tonies-data.js"></script>
+<script>
+const collection=document.getElementById("collection");
+const search=document.getElementById("search");
+const resultCount=document.getElementById("resultCount");
+const filters=document.querySelectorAll(".filter");
+let activeFilter="All";
+
+function emojiFor(item){
+  if(item.category==="Pokémon") return "⚡";
+  if(item.category==="Disney") return "🏰";
+  if(item.category==="Kids & Learning") return "🎵";
+  if(item.category==="Creative") return "🧛";
+  return "🎧";
+}
+
+function card(item){
+  const art=item.image
+    ? `<img src="${item.image}" alt="${item.name}" style="width:100%;height:100%;object-fit:contain">`
+    : `<div class="placeholder">${emojiFor(item)}</div>`;
+
+  const details=[
+    item.age ? `Age ${item.age}` : "",
+    item.runtime ? item.runtime : "",
+    item.content || ""
+  ].filter(Boolean).map(x=>`<div>${x}</div>`).join("");
+
+  return `<article class="card">
+    <div class="art">${art}</div>
+    <div class="card-body">
+      <h3>${item.name}</h3>
+      <p class="brand">${item.brand}</p>
+      <div class="badges">
+        <span class="badge">${item.category}</span>
+        ${item.type==="creative" ? '<span class="badge soft">Creative</span>' : ''}
+      </div>
+      ${details ? `<div class="details">${details}</div>` : ""}
+    </div>
+  </article>`;
+}
+
+function render(){
+  const q=search.value.trim().toLowerCase();
+  const visible=daltonTonies.filter(item=>{
+    const matchesFilter=activeFilter==="All" || item.category===activeFilter;
+    const haystack=`${item.name} ${item.officialName} ${item.brand} ${item.category} ${item.content}`.toLowerCase();
+    return matchesFilter && haystack.includes(q);
+  });
+  collection.innerHTML=visible.length
+    ? visible.map(card).join("")
+    : `<div class="empty" style="grid-column:1/-1">No Tonies match that search.</div>`;
+  resultCount.textContent=`${visible.length} shown`;
+}
+
+function updateStats(){
+  const owned=daltonTonies.filter(x=>x.status==="owned");
+  const wishlist=daltonTonies.filter(x=>x.status==="wishlist");
+  const categories=new Set(owned.map(x=>x.category));
+  document.getElementById("ownedCount").textContent=owned.length;
+  document.getElementById("wishlistCount").textContent=wishlist.length;
+  document.getElementById("categoryCount").textContent=categories.size;
+}
+
+filters.forEach(button=>{
+  button.addEventListener("click",()=>{
+    filters.forEach(b=>b.classList.remove("active"));
+    button.classList.add("active");
+    activeFilter=button.dataset.filter;
+    render();
+  });
+});
+search.addEventListener("input",render);
+updateStats();
+render();
+</script>
+</body>
+</html>
