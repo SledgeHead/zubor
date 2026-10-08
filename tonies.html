@@ -169,7 +169,6 @@ function card(item){
       <p class="brand">${item.category==="Pokémon" ? (item.generation || item.displayTitle || item.brand) : (item.displayTitle || item.brand)}</p>
       <div class="badges">
         <span class="badge">${item.category}</span>
-        ${item.type==="creative" ? '<span class="badge soft">Creative</span>' : ''}
       </div>
       ${details ? `<div class="details">${details}</div>` : ""}
       <div class="details" style="margin-top:9px;padding-top:9px">

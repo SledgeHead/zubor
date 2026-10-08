@@ -216,8 +216,8 @@ window.daltonTonies = [
     status: "owned",
     acquired: "October 7, 2026",
     age: "3+",
-    runtime: "",
-    content: "Toy Story",
+    runtime: "28 min",
+    content: "Adventure & songs",
     image: "images/tonies/woody.png",
     remoteImage: "https://us.tonies.com/cdn/shop/files/Woody-10000511-TB2Hero2.png?width=1200"
   },
