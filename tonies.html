@@ -37,8 +37,8 @@ h1{margin:5px 0 5px;font-size:2rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,220px));justify-content:start;gap:16px}
 .card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 20px rgba(64,136,178,.13);transition:.2s ease}
 .card:hover{transform:translateY(-3px);box-shadow:0 14px 26px rgba(64,136,178,.2)}
-.art{aspect-ratio:1/1;background:linear-gradient(145deg,#f5fbfc,#dceff3);display:flex;align-items:center;justify-content:center;padding:18px}
-.art img{width:100%;height:100%;object-fit:contain;border-radius:14px;display:block}
+.art{aspect-ratio:1/1;background:linear-gradient(145deg,#f5fbfc,#dceff3);display:flex;align-items:center;justify-content:center;padding:18px;overflow:hidden}
+.art img{width:100%;height:100%;object-fit:contain;border-radius:14px !important;clip-path:inset(0 round 14px);display:block}
 .placeholder{width:108px;height:128px;border-radius:27px 27px 31px 31px;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);display:flex;align-items:center;justify-content:center;font-size:3rem}
 .card-body{padding:14px}
 .card h3{margin:0 0 3px;font-size:1.04rem;line-height:1.2}
@@ -131,7 +131,7 @@ h1{margin:5px 0 5px;font-size:2rem}
 
 </div>
 
-<script src="./tonies-data.js?v=20261008-13"></script>
+<script src="./tonies-data.js?v=20261008-14"></script>
 <script>
 const daltonTonies = window.daltonTonies || [];
 const collection=document.getElementById("collection");
