@@ -212,7 +212,7 @@ const daltonTonies = [
     name: "Cookie Monster",
     officialName: "Sesame Street: Cookie Monster Tonie",
     brand: "Sesame Street",
-    category: "Kids & Learning",
+    category: "Sesame Street",
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
