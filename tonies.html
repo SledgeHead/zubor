@@ -26,6 +26,10 @@ h1{margin:5px 0 5px;font-size:2rem}
 .search:focus{border-color:#4088b2}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .filter{border:0;background:#eaf7f9;color:#4088b2;padding:8px 12px;border-radius:999px;font:inherit;font-weight:700;cursor:pointer}
+.filter-link{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.wishlist-link{background:#f2ebfa;color:#7654a6}
+.wishlist-link:hover{background:#e8dcf5;color:#654391}
+.wishlist-wrap{display:inline-flex;align-items:center;padding-left:8px;margin-left:2px;border-left:1px solid #cfe7ec}
 .filter.active{background:#4088b2;color:#fff}
 .box-card{padding:18px;margin-bottom:22px;display:flex;align-items:center;gap:18px}
 .box-art{width:86px;height:86px;flex:0 0 86px;border-radius:24px;background:linear-gradient(145deg,#ffe95b,#f7c928);display:flex;align-items:center;justify-content:center;font-size:2.8rem;box-shadow:inset 0 -8px 15px rgba(0,0,0,.08)}
@@ -136,6 +140,7 @@ h1{margin:5px 0 5px;font-size:2rem}
   </div>
   <div id="filters" class="filters">
     <button class="filter active" data-filter="All">All</button>
+    <span class="wishlist-wrap"><a class="filter filter-link wishlist-link" href="https://my.babylist.com/dalton-zubor" target="_blank" rel="noopener">Wishlist</a></span>
     <button class="filter" data-filter="Disney">Disney</button>
     <button class="filter" data-filter="Kids & Learning">Kids & Learning</button>
     <button class="filter" data-filter="Pokémon">Pokémon</button>
@@ -161,14 +166,13 @@ h1{margin:5px 0 5px;font-size:2rem}
 </section>
 
 <div class="footer">
-  Product images are hosted by their respective manufacturers/brand owners.<br>
   Adventure awaits.<br>
   ❤️ The Zubor Family
 </div>
 
 </div>
 
-<script src="./tonies-data.js?v=20261008-22"></script>
+<script src="./tonies-data.js?v=20261008-23"></script>
 <script>
 const daltonTonies = window.daltonTonies || [];
 const collection=document.getElementById("collection");
