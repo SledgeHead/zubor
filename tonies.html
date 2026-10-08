@@ -52,11 +52,48 @@ h1{margin:5px 0 5px;font-size:2rem}
 .section-note strong{color:#4088b2}
 .footer{text-align:center;color:#6b92a8;font-size:.9rem;margin-top:28px}
 @media(max-width:560px){
-  .container{width:min(92%,560px)}
-  .stats{grid-template-columns:1fr 1fr}
-  .stats .stat:last-child{grid-column:1/-1}
-  h1{font-size:1.7rem}
-  .box-card{align-items:flex-start}
+  .container{width:calc(100% - 24px);padding:14px 0 34px}
+  .back{margin:2px 0 10px;font-size:.78rem}
+  .hero{padding:20px 14px;border-radius:18px;margin-bottom:12px}
+  .logo{width:125px}
+  h1{font-size:1.55rem}
+  .subtitle{font-size:.82rem}
+  .stats{grid-template-columns:1fr !important;margin-top:14px}
+  .stats .stat:last-child{grid-column:auto}
+  .stat{padding:9px}
+  .stat strong{font-size:1.25rem}
+  .box-card{padding:13px;gap:12px;margin-bottom:12px;border-radius:18px}
+  .box-art{width:64px;height:64px;flex-basis:64px;border-radius:18px;font-size:2rem}
+  .box-card h2{font-size:1rem}
+  .box-card p{font-size:.72rem;line-height:1.35}
+  .controls{padding:12px;border-radius:18px;margin-bottom:16px}
+  .search{padding:10px 12px;font-size:.9rem}
+  .filters{gap:6px;margin-top:10px}
+  .filter{padding:7px 10px;font-size:.8rem}
+  .section-title{margin:18px 2px 9px}
+  .section-title h2{font-size:1.15rem}
+  .section-count{font-size:.78rem}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .card{border-radius:15px}
+  .card:hover{transform:none}
+  .art{aspect-ratio:1/1;padding:12px}
+  .art img,.tonie-image{width:120px !important;height:120px !important}
+  .placeholder{width:96px;height:110px;border-radius:22px;font-size:2.3rem}
+  .card-body{padding:10px}
+  .card h3{font-size:.88rem}
+  .brand{font-size:.72rem;margin-bottom:7px;line-height:1.25}
+  .badges{gap:4px}
+  .badge{padding:3px 6px;font-size:.62rem}
+  .details{margin-top:7px;padding-top:7px;font-size:.68rem;line-height:1.4}
+  .section-note{padding:14px;margin-top:16px;font-size:.8rem}
+  .footer{font-size:.72rem;margin-top:20px}
+}
+@media(max-width:360px){
+  .container{width:calc(100% - 16px)}
+  .grid{gap:8px}
+  .art{padding:10px}
+  .art img,.tonie-image{width:108px !important;height:108px !important}
+  .card-body{padding:9px}
 }
 </style>
 </head>
@@ -131,7 +168,7 @@ h1{margin:5px 0 5px;font-size:2rem}
 
 </div>
 
-<script src="./tonies-data.js?v=20261008-15"></script>
+<script src="./tonies-data.js?v=20261008-21"></script>
 <script>
 const daltonTonies = window.daltonTonies || [];
 const collection=document.getElementById("collection");
@@ -153,8 +190,8 @@ function card(item){
   const primary=item.image || "";
   const fallback=item.remoteImage || "";
   const art=primary
-    ? `<img src="${primary}" alt="${item.name}" class="tonie-image" style="width:150px !important;height:150px !important;object-fit:contain;border-radius:20px !important;clip-path:inset(0 round 20px);overflow:hidden;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);" onerror="if(this.dataset.fallbackTried!=="1" && this.dataset.fallback){this.dataset.fallbackTried="1";this.src=this.dataset.fallback;}else{this.style.display="none";this.nextElementSibling.style.display="flex"}" data-fallback="${fallback}"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
-    : (fallback ? `<img src="${fallback}" alt="${item.name}" class="tonie-image" style="width:150px !important;height:150px !important;object-fit:contain;border-radius:20px !important;clip-path:inset(0 round 20px);overflow:hidden;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>` : `<div class="placeholder">${emojiFor(item)}</div>`);
+    ? `<img src="${primary}" alt="${item.name}" class="tonie-image" onerror="if(this.dataset.fallbackTried!=="1" && this.dataset.fallback){this.dataset.fallbackTried="1";this.src=this.dataset.fallback;}else{this.style.display="none";this.nextElementSibling.style.display="flex"}" data-fallback="${fallback}"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
+    : (fallback ? `<img src="${fallback}" alt="${item.name}" class="tonie-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>` : `<div class="placeholder">${emojiFor(item)}</div>`);
 
   const details=[
     item.age ? `Age ${item.age}` : "",
