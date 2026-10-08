@@ -123,7 +123,7 @@ h1{margin:5px 0 5px;font-size:2rem}
   <div>
     <h2>Dalton's Toniebox 2</h2>
     <p><strong>Lightning Yellow</strong> · Pokémon Starter Set</p>
-    <p>Added October 7, 2026 · The beginning of Dalton's Tonie collection.</p>
+    <p>Added <span id="tonieboxAcquired">—</span> · The beginning of Dalton's Tonie collection.</p>
   </div>
 </section>
 
@@ -204,10 +204,9 @@ function emojiFor(item){
 
 function card(item){
   const primary=item.image || "";
-  const fallback=item.remoteImage || "";
   const art=primary
-    ? `<img src="${primary}" alt="${item.name}" class="tonie-image" onerror="if(this.dataset.fallbackTried!=="1" && this.dataset.fallback){this.dataset.fallbackTried="1";this.src=this.dataset.fallback;}else{this.style.display="none";this.nextElementSibling.style.display="flex"}" data-fallback="${fallback}"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
-    : (fallback ? `<img src="${fallback}" alt="${item.name}" class="tonie-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>` : `<div class="placeholder">${emojiFor(item)}</div>`);
+    ? `<img src="${primary}" alt="${item.name}" class="tonie-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
+    : `<div class="placeholder">${emojiFor(item)}</div>`;
 
   const details=[
     item.age ? `Age ${item.age}` : "",
@@ -257,6 +256,11 @@ function updateStats(){
   document.getElementById("ownedCount").textContent=owned.length;
 }
 
+function updateToniebox(){
+  const acquired=window.daltonToniebox?.acquired || "—";
+  document.getElementById("tonieboxAcquired").textContent=acquired;
+}
+
 filters.forEach(button=>{
   button.addEventListener("click",()=>{
     filters.forEach(b=>b.classList.remove("active"));
@@ -267,6 +271,7 @@ filters.forEach(button=>{
 });
 search.addEventListener("input",render);
 sort.addEventListener("change",render);
+updateToniebox();
 updateStats();
 render();
 </script>
