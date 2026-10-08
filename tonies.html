@@ -72,7 +72,6 @@ h1{margin:5px 0 5px;font-size:2rem}
   <div class="stats">
     <div class="stat"><strong id="ownedCount">0</strong><span>Tonies Owned</span></div>
     <div class="stat"><strong id="categoryCount">0</strong><span>Categories</span></div>
-    <div class="stat"><strong id="wishlistCount">0</strong><span>Wishlist</span></div>
   </div>
 </section>
 
@@ -98,9 +97,9 @@ h1{margin:5px 0 5px;font-size:2rem}
   </div>
   <div id="filters" class="filters">
     <button class="filter active" data-filter="All">All</button>
-    <button class="filter" data-filter="Pokémon">Pokémon</button>
     <button class="filter" data-filter="Disney">Disney</button>
     <button class="filter" data-filter="Kids & Learning">Kids & Learning</button>
+    <button class="filter" data-filter="Pokémon">Pokémon</button>
     <button class="filter" data-filter="Sesame Street">Sesame Street</button>
     <button class="filter" data-filter="Creative">Creative</button>
   </div>
@@ -161,9 +160,11 @@ function card(item){
     <div class="art">${art}</div>
     <div class="card-body">
       <h3>${item.name}</h3>
-      <p class="brand">${item.brand}</p>
+      <p class="brand">${item.displayTitle || item.brand}</p>
       <div class="badges">
-        <span class="badge">${item.category}</span>
+        ${item.category==="Disney" || item.category==="Pokémon"
+          ? ""
+          : `<span class="badge">${item.category}</span>`}
         ${item.type==="creative" ? '<span class="badge soft">Creative</span>' : ''}
       </div>
       ${details ? `<div class="details">${details}</div>` : ""}
@@ -197,10 +198,8 @@ function render(){
 
 function updateStats(){
   const owned=daltonTonies.filter(x=>x.status==="owned");
-  const wishlist=daltonTonies.filter(x=>x.status==="wishlist");
   const categories=new Set(owned.map(x=>x.category));
   document.getElementById("ownedCount").textContent=owned.length;
-  document.getElementById("wishlistCount").textContent=wishlist.length;
   document.getElementById("categoryCount").textContent=categories.size;
 }
 

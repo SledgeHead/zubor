@@ -5,8 +5,9 @@
 const daltonTonies = [
   {
     id: "lilo-stitch",
-    name: "Lilo & Stitch",
+    name: "Stitch",
     officialName: "Disney Lilo & Stitch Tonie",
+    displayTitle: "Lilo & Stitch",
     brand: "Disney",
     category: "Disney",
     type: "content",
@@ -22,6 +23,7 @@ const daltonTonies = [
     id: "simba-cuddle",
     name: "Simba Cuddle",
     officialName: "Disney Simba Cuddle Tonie",
+    displayTitle: "The Lion King",
     brand: "Disney",
     category: "Disney",
     type: "content",
@@ -66,6 +68,7 @@ const daltonTonies = [
   {
     id: "pokemon-pikachu",
     name: "Pikachu",
+    displayTitle: "Pokémon",
     officialName: "Pokémon Pikachu Tonie",
     brand: "Pokémon",
     category: "Pokémon",
@@ -81,6 +84,7 @@ const daltonTonies = [
   {
     id: "pokemon-bulbasaur",
     name: "Bulbasaur",
+    displayTitle: "Pokémon",
     officialName: "Pokémon Bulbasaur Tonie",
     brand: "Pokémon",
     category: "Pokémon",
@@ -96,6 +100,7 @@ const daltonTonies = [
   {
     id: "pokemon-charmander",
     name: "Charmander",
+    displayTitle: "Pokémon",
     officialName: "Pokémon Charmander Tonie",
     brand: "Pokémon",
     category: "Pokémon",
@@ -111,6 +116,7 @@ const daltonTonies = [
   {
     id: "pokemon-squirtle",
     name: "Squirtle",
+    displayTitle: "Pokémon",
     officialName: "Pokémon Squirtle Tonie",
     brand: "Pokémon",
     category: "Pokémon",
@@ -127,6 +133,7 @@ const daltonTonies = [
     id: "hercules",
     name: "Hercules",
     officialName: "Disney Hercules Tonie",
+    displayTitle: "Hercules",
     brand: "Disney",
     category: "Disney",
     type: "content",
@@ -139,8 +146,9 @@ const daltonTonies = [
   },
   {
     id: "jungle-book",
-    name: "The Jungle Book",
+    name: "Baloo",
     officialName: "Disney The Jungle Book Tonie",
+    displayTitle: "The Jungle Book",
     brand: "Disney",
     category: "Disney",
     type: "content",
@@ -153,8 +161,9 @@ const daltonTonies = [
   },
   {
     id: "monsters-inc",
-    name: "Monsters, Inc.",
+    name: "Sulley",
     officialName: "Disney and Pixar Monsters, Inc. Tonie",
+    displayTitle: "Monsters, Inc.",
     brand: "Disney & Pixar",
     category: "Disney",
     type: "content",
@@ -167,8 +176,9 @@ const daltonTonies = [
   },
   {
     id: "mickey-mouse-clubhouse",
-    name: "Mickey Mouse Clubhouse",
+    name: "Mickey Mouse",
     officialName: "Disney Mickey Mouse Clubhouse Tonie",
+    displayTitle: "Mickey Mouse Clubhouse",
     brand: "Disney",
     category: "Disney",
     type: "content",
@@ -183,6 +193,7 @@ const daltonTonies = [
     id: "woody",
     name: "Woody",
     officialName: "Disney and Pixar Toy Story: Woody Tonie",
+    displayTitle: "Toy Story",
     brand: "Disney & Pixar",
     category: "Disney",
     type: "content",
@@ -237,8 +248,9 @@ const daltonTonies = [
   },
   {
     id: "nightmare-before-christmas",
-    name: "The Nightmare Before Christmas",
+    name: "Jack Skellington",
     officialName: "Disney The Nightmare Before Christmas Tonie",
+    displayTitle: "The Nightmare Before Christmas",
     brand: "Disney",
     category: "Disney",
     type: "content",
@@ -251,8 +263,9 @@ const daltonTonies = [
   },
   {
     id: "lion-king",
-    name: "The Lion King",
+    name: "Simba",
     officialName: "Disney The Lion King Tonie",
+    displayTitle: "The Lion King",
     brand: "Disney",
     category: "Disney",
     type: "content",
@@ -265,8 +278,9 @@ const daltonTonies = [
   },
   {
     id: "incredibles",
-    name: "The Incredibles",
+    name: "Mr. Incredible",
     officialName: "Disney and Pixar The Incredibles Tonie",
+    displayTitle: "The Incredibles",
     brand: "Disney & Pixar",
     category: "Disney",
     type: "content",
