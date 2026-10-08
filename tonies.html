@@ -164,9 +164,7 @@ function card(item){
       <h3>${item.name}</h3>
       <p class="brand">${item.displayTitle || item.brand}</p>
       <div class="badges">
-        ${item.category==="Disney" || item.category==="Pokémon"
-          ? ""
-          : `<span class="badge">${item.category}</span>`}
+        <span class="badge">${item.category}</span>
         ${item.type==="creative" ? '<span class="badge soft">Creative</span>' : ''}
       </div>
       ${details ? `<div class="details">${details}</div>` : ""}

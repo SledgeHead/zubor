@@ -16,7 +16,7 @@ const daltonTonies = [
     age: "3+",
     runtime: "29 min",
     content: "Adventure & songs",
-    image: "https://us.tonies.com/cdn/shop/files/Lilo--Stitch-10000936-TB2Hero2.png?v=1786731836&width=1200",
+    image: "images/tonies/lilo-stitch.png",
     featured: true
   },
   {
@@ -32,7 +32,7 @@ const daltonTonies = [
     age: "3+",
     runtime: "36 min",
     content: "Calming stories & sounds",
-    image: "https://us.tonies.com/cdn/shop/files/Cuddle-Simba-11003866-TB2Hero2.png?v=1774883270&width=1200",
+    image: "images/tonies/simba-cuddle.png",
     featured: true
   },
   {
@@ -47,7 +47,7 @@ const daltonTonies = [
     age: "3+",
     runtime: "Up to 90 min",
     content: "Your own audio",
-    image: "https://us.tonies.com/cdn/shop/files/Vampire-10000547-TB2Hero1.png?v=1775762518&width=1200",
+    image: "images/tonies/vampire-creative.png",
     featured: true
   },
   {
@@ -62,7 +62,7 @@ const daltonTonies = [
     age: "3+",
     runtime: "42 min",
     content: "Songs, movement & education",
-    image: "https://us.tonies.com/cdn/shop/files/Dorothy-The-Dinosaur-11004232-TB2Hero2.png?v=1775562907&width=1200",
+    image: "images/tonies/dorothy-dinosaur.png",
     featured: true
   },
   {
@@ -78,7 +78,7 @@ const daltonTonies = [
     age: "",
     runtime: "78 min",
     content: "Adventure & exploration",
-    image: "https://us.tonies.com/cdn/shop/files/Pikachu-11000561-TB2Hero2.png?v=1782238454&width=1200",
+    image: "images/tonies/pokemon-pikachu.png",
     featured: true
   },
   {
@@ -94,7 +94,7 @@ const daltonTonies = [
     age: "",
     runtime: "77 min",
     content: "Adventure & exploration",
-    image: "https://us.tonies.com/cdn/shop/files/Bulbasaur-11003603-TB2Hero2.png?v=1782238182&width=1200",
+    image: "images/tonies/pokemon-bulbasaur.png",
     featured: true
   },
   {
@@ -110,7 +110,7 @@ const daltonTonies = [
     age: "",
     runtime: "79 min",
     content: "Adventure & exploration",
-    image: "https://us.tonies.com/cdn/shop/files/Charmander-11003600-TB2Hero2.png?v=1782238314&width=1200",
+    image: "images/tonies/pokemon-charmander.png",
     featured: true
   },
   {
@@ -126,7 +126,7 @@ const daltonTonies = [
     age: "",
     runtime: "67 min",
     content: "Adventure & exploration",
-    image: "https://us.tonies.com/cdn/shop/files/Squirtle-11003602-TB2Hero2.png?v=1782238590&width=1200",
+    image: "images/tonies/pokemon-squirtle.png",
     featured: true
   },
   {
@@ -142,7 +142,7 @@ const daltonTonies = [
     age: "5+",
     runtime: "47 min",
     content: "Adventure & sing-along",
-    image: "https://us.tonies.com/cdn/shop/files/Hercules-10001698-TB2Hero2.png?v=1774883283&width=1200"
+    image: "images/tonies/hercules.png"
   },
   {
     id: "jungle-book",
@@ -157,7 +157,7 @@ const daltonTonies = [
     age: "3+",
     runtime: "15–30 min",
     content: "Adventure & songs",
-    image: "https://us.tonies.com/cdn/shop/files/The-Jungle-Book-10000497-TB2Hero2.png?v=1774883311&width=1200"
+    image: "images/tonies/jungle-book.png"
   },
   {
     id: "monsters-inc",
@@ -172,7 +172,7 @@ const daltonTonies = [
     age: "5+",
     runtime: "33 min",
     content: "Adventure & songs",
-    image: "https://us.tonies.com/cdn/shop/files/Monsters_-Inc.-10000517-TB2Hero1.png?v=1774883296&width=1200"
+    image: "images/tonies/monsters-inc.png"
   },
   {
     id: "mickey-mouse-clubhouse",
@@ -187,7 +187,7 @@ const daltonTonies = [
     age: "1+",
     runtime: "38 min",
     content: "Adventure & songs",
-    image: "https://us.tonies.com/cdn/shop/files/Mickey-Clubhouse-10001072-TB2Hero2.png?v=1779984703&width=1200"
+    image: "images/tonies/mickey-mouse-clubhouse.png"
   },
   {
     id: "woody",
@@ -202,7 +202,7 @@ const daltonTonies = [
     age: "3+",
     runtime: "",
     content: "Toy Story",
-    image: "https://us.tonies.com/cdn/shop/files/Woody-10000511-TB2Hero2.png?v=1774883288&width=1200"
+    image: "images/tonies/woody.png"
   },
   {
     id: "ms-rachel",
@@ -216,7 +216,7 @@ const daltonTonies = [
     age: "1+",
     runtime: "About 50 min",
     content: "Songs & learning",
-    image: "https://tonies.com.au/cdn/shop/files/Ms-Rachel-11002272-TB2Hero1.png?crop=center&height=224&v=1775824557&width=300"
+    image: "images/tonies/ms-rachel.png"
   },
   {
     id: "cookie-monster",
@@ -230,7 +230,7 @@ const daltonTonies = [
     age: "3+",
     runtime: "30–45 min",
     content: "Healthy habits, education & songs",
-    image: "https://us.tonies.com/cdn/shop/files/Cookie-Monster-10000630-TB2Hero2.png?v=1774883297&width=1200"
+    image: "images/tonies/cookie-monster.png"
   },
   {
     id: "blues-clues",
@@ -244,7 +244,7 @@ const daltonTonies = [
     age: "3+",
     runtime: "57 min",
     content: "Learning, problem-solving & songs",
-    image: "https://us.tonies.com/cdn/shop/files/Blue_s-Clues-10000777-TB2Hero2.png?v=1774883275&width=1200"
+    image: "images/tonies/blues-clues.png"
   },
   {
     id: "nightmare-before-christmas",
@@ -259,7 +259,7 @@ const daltonTonies = [
     age: "6+",
     runtime: "47 min",
     content: "Story & songs",
-    image: "https://us.tonies.com/cdn/shop/files/The-Nightmare-Before-Christmas-10001358-TB2Hero2.png?v=1774883296&width=1200"
+    image: "images/tonies/nightmare-before-christmas.png"
   },
   {
     id: "lion-king",
@@ -274,7 +274,7 @@ const daltonTonies = [
     age: "3+",
     runtime: "30–45 min",
     content: "Story & songs",
-    image: "https://us.tonies.com/cdn/shop/files/The-Lion-King-10000498-TB2Hero2.png?v=1774883295&width=1200"
+    image: "images/tonies/lion-king.png"
   },
   {
     id: "incredibles",
@@ -289,7 +289,7 @@ const daltonTonies = [
     age: "6+",
     runtime: "60+ min",
     content: "Adventure",
-    image: "https://us.tonies.com/cdn/shop/files/The-Incredibles-10001301-TB2Hero2.png?v=1774883298&width=1200"
+    image: "images/tonies/incredibles.png"
   }
 ];
 
