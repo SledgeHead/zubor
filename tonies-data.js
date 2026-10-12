@@ -14,7 +14,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "3+",
     runtime: "29 min",
     content: "Adventure & songs",
     image: "images/tonies/lilo-stitch.png",
@@ -30,7 +29,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 12, 2026",
-    age: "3+",
     runtime: "30–45 min",
     content: "Learning, pet responsibility & songs",
     image: "images/tonies/elmo-tango.png"
@@ -45,7 +43,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 12, 2026",
-    age: "4+",
     runtime: "27 min",
     content: "Christmas story, songs & holiday lessons",
     image: "images/tonies/grinch.png"
@@ -60,7 +57,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 12, 2026",
-    age: "4+",
     runtime: "17 min",
     content: "Rescue adventure & sing-along songs",
     image: "images/tonies/101-dalmatians.png"
@@ -75,7 +71,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 12, 2026",
-    age: "5+",
     runtime: "37 min",
     content: "Heartwarming adventure & songs",
     image: "images/tonies/lady-and-the-tramp.png"
@@ -90,7 +85,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "3+",
     runtime: "36 min",
     content: "Calming stories & sounds",
     image: "images/tonies/simba-cuddle.png",
@@ -105,7 +99,6 @@ window.daltonTonies = [
     type: "creative",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "3+",
     runtime: "Up to 90 min",
     content: "Your own audio",
     image: "images/tonies/vampire-creative.png",
@@ -120,7 +113,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "3+",
     runtime: "42 min",
     content: "Songs, movement & education",
     image: "images/tonies/dorothy-dinosaur.png",
@@ -137,7 +129,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "5+",
     runtime: "78 min",
     content: "Mysteries, Trainer Academy facts & a Pokémon battle",
     image: "images/tonies/pokemon-pikachu.png",
@@ -154,7 +145,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "5+",
     runtime: "77 min",
     content: "Clever adventures, Trainer Academy facts & a Pokémon battle",
     image: "images/tonies/pokemon-bulbasaur.png",
@@ -171,7 +161,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "5+",
     runtime: "79 min",
     content: "Fiery adventures, Trainer Academy facts & a Pokémon battle",
     image: "images/tonies/pokemon-charmander.png",
@@ -188,7 +177,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "5+",
     runtime: "67 min",
     content: "Seaside adventures, Trainer Academy facts & a Pokémon battle",
     image: "images/tonies/pokemon-squirtle.png",
@@ -204,7 +192,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "5+",
     runtime: "47 min",
     content: "Adventure & sing-along",
     image: "images/tonies/hercules.png"
@@ -219,7 +206,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "3+",
     runtime: "15–30 min",
     content: "Adventure & songs",
     image: "images/tonies/jungle-book.png"
@@ -234,7 +220,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "5+",
     runtime: "33 min",
     content: "Adventure & songs",
     image: "images/tonies/monsters-inc.png"
@@ -249,7 +234,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "1+",
     runtime: "38 min",
     content: "Adventure & songs",
     image: "images/tonies/mickey-mouse-clubhouse.png"
@@ -264,7 +248,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "3+",
     runtime: "28 min",
     content: "Adventure & songs",
     image: "images/tonies/woody.png"
@@ -278,7 +261,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "1+",
     runtime: "About 50 min",
     content: "Songs & learning",
     image: "images/tonies/ms-rachel.png"
@@ -292,7 +274,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "3+",
     runtime: "30–45 min",
     content: "Healthy habits, education & songs",
     image: "images/tonies/cookie-monster.png"
@@ -306,7 +287,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "3+",
     runtime: "57 min",
     content: "Learning, problem-solving & songs",
     image: "images/tonies/blues-clues.png"
@@ -321,7 +301,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "6+",
     runtime: "47 min",
     content: "Story & songs",
     image: "images/tonies/nightmare-before-christmas.png"
@@ -336,7 +315,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "3+",
     runtime: "30–45 min",
     content: "Story & songs",
     image: "images/tonies/lion-king.png"
@@ -351,7 +329,6 @@ window.daltonTonies = [
     type: "content",
     status: "owned",
     acquired: "October 7, 2026",
-    age: "6+",
     runtime: "60+ min",
     content: "Adventure",
     image: "images/tonies/incredibles.png"
