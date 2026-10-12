@@ -51,6 +51,36 @@ window.daltonTonies = [
     image: "images/tonies/grinch.png"
   },
   {
+    id: "101-dalmatians",
+    name: "101 Dalmatians",
+    officialName: "Disney 101 Dalmatians Tonie",
+    displayTitle: "101 Dalmatians",
+    brand: "Disney",
+    category: "Disney",
+    type: "content",
+    status: "owned",
+    acquired: "October 12, 2026",
+    age: "4+",
+    runtime: "17 min",
+    content: "Rescue adventure & sing-along songs",
+    image: "images/tonies/101-dalmatians.png"
+  },
+  {
+    id: "lady-and-the-tramp",
+    name: "Lady and the Tramp",
+    officialName: "Disney Lady and the Tramp Tonie",
+    displayTitle: "Lady and the Tramp",
+    brand: "Disney",
+    category: "Disney",
+    type: "content",
+    status: "owned",
+    acquired: "October 12, 2026",
+    age: "5+",
+    runtime: "37 min",
+    content: "Heartwarming adventure & songs",
+    image: "images/tonies/lady-and-the-tramp.png"
+  },
+  {
     id: "simba-cuddle",
     name: "Simba Cuddle",
     officialName: "Disney Simba Cuddle Tonie",
