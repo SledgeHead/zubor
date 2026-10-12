@@ -1,3 +1,4 @@
+```javascript
 // Dalton's Tonies collection
 // Public catalog data only — no purchase prices, order numbers, or gift-card details.
 // Add future Tonies to this array and the page will pick them up automatically.
@@ -18,6 +19,36 @@ window.daltonTonies = [
     content: "Adventure & songs",
     image: "images/tonies/lilo-stitch.png",
     featured: true
+  },
+  {
+    id: "elmo-tango",
+    name: "Elmo & Tango",
+    officialName: "Sesame Street: Elmo & Tango Tonie",
+    displayTitle: "Sesame Street",
+    brand: "Sesame Street",
+    category: "Sesame Street",
+    type: "content",
+    status: "owned",
+    acquired: "October 12, 2026",
+    age: "3+",
+    runtime: "30–45 min",
+    content: "Learning, pet responsibility & songs",
+    image: "images/tonies/elmo-tango.png"
+  },
+  {
+    id: "grinch",
+    name: "The Grinch",
+    officialName: "Dr. Seuss: How The Grinch Stole Christmas! Tonie",
+    displayTitle: "Dr. Seuss",
+    brand: "Dr. Seuss",
+    category: "Kids & Learning",
+    type: "content",
+    status: "owned",
+    acquired: "October 12, 2026",
+    age: "4+",
+    runtime: "27 min",
+    content: "Christmas story, songs & holiday lessons",
+    image: "images/tonies/grinch.png"
   },
   {
     id: "simba-cuddle",
@@ -146,7 +177,7 @@ window.daltonTonies = [
     age: "5+",
     runtime: "47 min",
     content: "Adventure & sing-along",
-    image: "images/tonies/hercules.png",
+    image: "images/tonies/hercules.png"
   },
   {
     id: "jungle-book",
@@ -161,7 +192,7 @@ window.daltonTonies = [
     age: "3+",
     runtime: "15–30 min",
     content: "Adventure & songs",
-    image: "images/tonies/jungle-book.png",
+    image: "images/tonies/jungle-book.png"
   },
   {
     id: "monsters-inc",
@@ -176,7 +207,7 @@ window.daltonTonies = [
     age: "5+",
     runtime: "33 min",
     content: "Adventure & songs",
-    image: "images/tonies/monsters-inc.png",
+    image: "images/tonies/monsters-inc.png"
   },
   {
     id: "mickey-mouse-clubhouse",
@@ -191,7 +222,7 @@ window.daltonTonies = [
     age: "1+",
     runtime: "38 min",
     content: "Adventure & songs",
-    image: "images/tonies/mickey-mouse-clubhouse.png",
+    image: "images/tonies/mickey-mouse-clubhouse.png"
   },
   {
     id: "woody",
@@ -206,7 +237,7 @@ window.daltonTonies = [
     age: "3+",
     runtime: "28 min",
     content: "Adventure & songs",
-    image: "images/tonies/woody.png",
+    image: "images/tonies/woody.png"
   },
   {
     id: "ms-rachel",
@@ -220,7 +251,7 @@ window.daltonTonies = [
     age: "1+",
     runtime: "About 50 min",
     content: "Songs & learning",
-    image: "images/tonies/ms-rachel.png",
+    image: "images/tonies/ms-rachel.png"
   },
   {
     id: "cookie-monster",
@@ -234,7 +265,7 @@ window.daltonTonies = [
     age: "3+",
     runtime: "30–45 min",
     content: "Healthy habits, education & songs",
-    image: "images/tonies/cookie-monster.png",
+    image: "images/tonies/cookie-monster.png"
   },
   {
     id: "blues-clues",
@@ -248,7 +279,7 @@ window.daltonTonies = [
     age: "3+",
     runtime: "57 min",
     content: "Learning, problem-solving & songs",
-    image: "images/tonies/blues-clues.png",
+    image: "images/tonies/blues-clues.png"
   },
   {
     id: "nightmare-before-christmas",
@@ -263,7 +294,7 @@ window.daltonTonies = [
     age: "6+",
     runtime: "47 min",
     content: "Story & songs",
-    image: "images/tonies/nightmare-before-christmas.png",
+    image: "images/tonies/nightmare-before-christmas.png"
   },
   {
     id: "lion-king",
@@ -278,7 +309,7 @@ window.daltonTonies = [
     age: "3+",
     runtime: "30–45 min",
     content: "Story & songs",
-    image: "images/tonies/lion-king.png",
+    image: "images/tonies/lion-king.png"
   },
   {
     id: "incredibles",
@@ -293,7 +324,7 @@ window.daltonTonies = [
     age: "6+",
     runtime: "60+ min",
     content: "Adventure",
-    image: "images/tonies/incredibles.png",
+    image: "images/tonies/incredibles.png"
   }
 ];
 
@@ -303,3 +334,4 @@ window.daltonToniebox = {
   acquired: "December 25, 2026",
   source: "Pokémon Toniebox 2 Starter Set"
 };
+```
