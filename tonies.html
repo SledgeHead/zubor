@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,6 +56,7 @@ h1{margin:5px 0 5px;font-size:2rem}
 .section-note{margin-top:22px;padding:17px;text-align:center;color:#6b92a8}
 .section-note strong{color:#4088b2}
 .footer{text-align:center;color:#6b92a8;font-size:.9rem;margin-top:28px}
+
 @media(max-width:560px){
   .container{width:calc(100% - 24px);padding:14px 0 34px}
   .back{margin:2px 0 10px;font-size:.78rem}
@@ -92,6 +94,7 @@ h1{margin:5px 0 5px;font-size:2rem}
   .section-note{padding:14px;margin-top:16px;font-size:.8rem}
   .footer{font-size:.72rem;margin-top:20px}
 }
+
 @media(max-width:360px){
   .container{width:calc(100% - 16px)}
   .grid{gap:8px}
@@ -171,54 +174,60 @@ h1{margin:5px 0 5px;font-size:2rem}
 <script src="./tonies-data.js?v=20261012-01"></script>
 <script>
 const daltonTonies = window.daltonTonies || [];
-const collection=document.getElementById("collection");
-const search=document.getElementById("search");
-const resultCount=document.getElementById("resultCount");
-const filtersContainer=document.getElementById("filters");
-const categoryFilters=document.getElementById("category-filters");
-const sort=document.getElementById("sort");
-let activeFilter="All";
+const collection = document.getElementById("collection");
+const search = document.getElementById("search");
+const resultCount = document.getElementById("resultCount");
+const filtersContainer = document.getElementById("filters");
+const categoryFilters = document.getElementById("category-filters");
+const sort = document.getElementById("sort");
+let activeFilter = "All";
 
-// Generate category buttons from tonies-data.js. New categories require no HTML edits.
+// Ignore leading articles when sorting titles alphabetically.
+// Displayed names remain unchanged.
+function sortTitle(name) {
+  return String(name || "").replace(/^(the|a|an)\s+/i, "").trim();
+}
+
+// Generate category buttons from tonies-data.js.
 // All stays first; Creative stays last; everything else is alphabetical.
-const categories=[...new Set(daltonTonies.map(item=>item.category).filter(Boolean))]
-  .sort((a,b)=>{
-    if(a==="Creative") return 1;
-    if(b==="Creative") return -1;
+const categories = [...new Set(daltonTonies.map(item => item.category).filter(Boolean))]
+  .sort((a, b) => {
+    if (a === "Creative") return 1;
+    if (b === "Creative") return -1;
     return a.localeCompare(b);
   });
 
-categoryFilters.innerHTML=categories.map(category=>
-  `<button class="filter" data-filter="${category.replace(/"/g,"&quot;")}">${category}</button>`
+categoryFilters.innerHTML = categories.map(category =>
+  `<button class="filter" data-filter="${category.replace(/"/g, "&quot;")}">${category}</button>`
 ).join("");
 
-const filters=filtersContainer.querySelectorAll(".filter");
+const filters = filtersContainer.querySelectorAll(".filter");
 
-function emojiFor(item){
-  if(item.category==="Pokémon") return "⚡";
-  if(item.category==="Disney") return "🏰";
-  if(item.category==="Kids & Learning") return "🎵";
-  if(item.category==="Creative") return "🧛";
+function emojiFor(item) {
+  if (item.category === "Pokémon") return "⚡";
+  if (item.category === "Disney") return "🏰";
+  if (item.category === "Kids & Learning") return "🎵";
+  if (item.category === "Creative") return "🧛";
   return "🎧";
 }
 
-function card(item){
-  const primary=item.image || "";
-  const art=primary
-    ? `<img src="${primary}" alt="${item.name}" class="tonie-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"> <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
+function card(item) {
+  const primary = item.image || "";
+  const art = primary
+    ? `<img src="${primary}" alt="${item.name}" class="tonie-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">${emojiFor(item)}</div>`
     : `<div class="placeholder">${emojiFor(item)}</div>`;
 
-  const details=[
+  const details = [
     item.age ? `Age ${item.age}` : "",
-    item.runtime ? item.runtime : "",
+    item.runtime || "",
     item.content || ""
-  ].filter(Boolean).map(x=>`<div>${x}</div>`).join("");
+  ].filter(Boolean).map(x => `<div>${x}</div>`).join("");
 
   return `<article class="card">
     <div class="art">${art}</div>
     <div class="card-body">
       <h3>${item.name}</h3>
-      <p class="brand">${item.category==="Pokémon" ? (item.generation || item.displayTitle || item.brand) : (item.displayTitle || item.brand)}</p>
+      <p class="brand">${item.category === "Pokémon" ? (item.generation || item.displayTitle || item.brand) : (item.displayTitle || item.brand)}</p>
       <div class="badges">
         <span class="badge">${item.category}</span>
       </div>
@@ -230,47 +239,65 @@ function card(item){
   </article>`;
 }
 
-function render(){
-  const q=search.value.trim().toLowerCase();
-  let visible=daltonTonies.filter(item=>{
-    const matchesFilter=activeFilter==="All" || item.category===activeFilter;
-    const haystack=`${item.name} ${item.officialName} ${item.brand} ${item.category} ${item.content}`.toLowerCase();
+function render() {
+  const q = search.value.trim().toLowerCase();
+
+  let visible = daltonTonies.filter(item => {
+    const matchesFilter = activeFilter === "All" || item.category === activeFilter;
+    const haystack = `${item.name} ${item.officialName || ""} ${item.brand || ""} ${item.category || ""} ${item.content || ""}`.toLowerCase();
     return matchesFilter && haystack.includes(q);
   });
 
-  visible.sort((a,b)=>{
-    if(sort.value==="name-desc") return b.name.localeCompare(a.name);
-    if(sort.value==="date-newest") return new Date(b.acquired)-new Date(a.acquired) || a.name.localeCompare(b.name);
-    if(sort.value==="date-oldest") return new Date(a.acquired)-new Date(b.acquired) || a.name.localeCompare(b.name);
-    return a.name.localeCompare(b.name);
+  visible.sort((a, b) => {
+    const titleA = sortTitle(a.name);
+    const titleB = sortTitle(b.name);
+
+    if (sort.value === "name-desc") {
+      return titleB.localeCompare(titleA) || a.name.localeCompare(b.name);
+    }
+
+    if (sort.value === "date-newest") {
+      return new Date(b.acquired) - new Date(a.acquired)
+        || titleA.localeCompare(titleB);
+    }
+
+    if (sort.value === "date-oldest") {
+      return new Date(a.acquired) - new Date(b.acquired)
+        || titleA.localeCompare(titleB);
+    }
+
+    return titleA.localeCompare(titleB) || a.name.localeCompare(b.name);
   });
 
-  collection.innerHTML=visible.length
+  collection.innerHTML = visible.length
     ? visible.map(card).join("")
     : `<div class="empty" style="grid-column:1/-1">No Tonies match that search.</div>`;
-  resultCount.textContent=`${visible.length} shown`;
+
+  resultCount.textContent = `${visible.length} shown`;
 }
 
-function updateStats(){
-  const owned=daltonTonies.filter(x=>x.status==="owned");
-  document.getElementById("ownedCount").textContent=owned.length;
+function updateStats() {
+  const owned = daltonTonies.filter(x => x.status === "owned");
+  document.getElementById("ownedCount").textContent = owned.length;
 }
 
-function updateToniebox(){
-  const acquired=window.daltonToniebox?.acquired || "—";
-  document.getElementById("tonieboxAcquired").textContent=acquired;
+function updateToniebox() {
+  const acquired = window.daltonToniebox?.acquired || "—";
+  document.getElementById("tonieboxAcquired").textContent = acquired;
 }
 
-filters.forEach(button=>{
-  button.addEventListener("click",()=>{
-    filters.forEach(b=>b.classList.remove("active"));
+filters.forEach(button => {
+  button.addEventListener("click", () => {
+    filters.forEach(b => b.classList.remove("active"));
     button.classList.add("active");
-    activeFilter=button.dataset.filter;
+    activeFilter = button.dataset.filter;
     render();
   });
 });
-search.addEventListener("input",render);
-sort.addEventListener("change",render);
+
+search.addEventListener("input", render);
+sort.addEventListener("change", render);
+
 updateToniebox();
 updateStats();
 render();
