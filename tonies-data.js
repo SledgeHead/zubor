@@ -1,5 +1,5 @@
-```javascript
-// Dalton's Tonies collection
+
+ // Dalton's Tonies collection
 // Public catalog data only — no purchase prices, order numbers, or gift-card details.
 // Add future Tonies to this array and the page will pick them up automatically.
 
@@ -334,4 +334,3 @@ window.daltonToniebox = {
   acquired: "December 25, 2026",
   source: "Pokémon Toniebox 2 Starter Set"
 };
-```
