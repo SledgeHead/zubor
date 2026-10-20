@@ -43,7 +43,7 @@ h1{margin:5px 0 5px;font-size:2rem}
 .card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 20px rgba(64,136,178,.13);transition:.2s ease}
 .card:hover{transform:translateY(-3px);box-shadow:0 14px 26px rgba(64,136,178,.2)}
 .art{aspect-ratio:1/1;background:linear-gradient(145deg,#f5fbfc,#dceff3);display:flex;align-items:center;justify-content:center;padding:18px;overflow:hidden}
-.art img{width:196px !important;height:196px !important;object-fit:contain;border-radius:20px !important;clip-path:inset(0 round 20px);overflow:hidden;display:block;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16)}
+.art img{width:180px !important;height:180px !important;object-fit:contain;border-radius:20px !important;clip-path:inset(0 round 20px);overflow:hidden;display:block;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16)}
 .placeholder{width:108px;height:128px;border-radius:27px 27px 31px 31px;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);display:flex;align-items:center;justify-content:center;font-size:3rem}
 .card-body{padding:14px}
 .card h3{margin:0 0 3px;font-size:1.04rem;line-height:1.2}
@@ -56,7 +56,6 @@ h1{margin:5px 0 5px;font-size:2rem}
 .section-note{margin-top:22px;padding:17px;text-align:center;color:#6b92a8}
 .section-note strong{color:#4088b2}
 .footer{text-align:center;color:#6b92a8;font-size:.9rem;margin-top:28px}
-
 @media(max-width:560px){
   .container{width:calc(100% - 24px);padding:14px 0 34px}
   .back{margin:2px 0 10px;font-size:.78rem}
@@ -83,7 +82,7 @@ h1{margin:5px 0 5px;font-size:2rem}
   .card{border-radius:15px}
   .card:hover{transform:none}
   .art{aspect-ratio:1/1;padding:12px}
-  .art img,.tonie-image{width:152px !important;height:152px !important}
+  .art img,.tonie-image{width:140px !important;height:140px !important}
   .placeholder{width:96px;height:110px;border-radius:22px;font-size:2.3rem}
   .card-body{padding:10px}
   .card h3{font-size:.88rem}
@@ -94,12 +93,11 @@ h1{margin:5px 0 5px;font-size:2rem}
   .section-note{padding:14px;margin-top:16px;font-size:.8rem}
   .footer{font-size:.72rem;margin-top:20px}
 }
-
 @media(max-width:360px){
   .container{width:calc(100% - 16px)}
   .grid{gap:8px}
   .art{padding:10px}
-  .art img,.tonie-image{width:140px !important;height:140px !important}
+  .art img,.tonie-image{width:128px !important;height:128px !important}
   .card-body{padding:9px}
 }
 </style>
@@ -126,7 +124,7 @@ h1{margin:5px 0 5px;font-size:2rem}
   <div>
     <h2>Dalton's Toniebox 2</h2>
     <p><strong>Lightning Yellow</strong> · Pokémon Starter Set</p>
-    <p>Added <span id="tonieboxAcquired">—</span> · The beginning of Dalton's Tonie collection.</p>
+    <p>Added <span id="tonieboxAcquired">December 25, 2026</span> · The beginning of Dalton's Tonie collection.</p>
   </div>
 </section>
 
@@ -149,7 +147,7 @@ h1{margin:5px 0 5px;font-size:2rem}
 </section>
 
 <div class="section-title">
-  <h2>⭐ Dalton's Collection</h2>
+  <h2 id="collectionHeading">⭐ Dalton's Collection</h2>
   <span class="section-count" id="resultCount"></span>
 </div>
 
@@ -171,29 +169,36 @@ h1{margin:5px 0 5px;font-size:2rem}
 
 </div>
 
-<script src="./tonies-data.js?v=20261012-01"></script>
+<script src="./tonies-data.js?v=20261020-02"></script>
 <script>
 const daltonTonies = window.daltonTonies || [];
+const daltonAccessories = window.daltonAccessories || [];
+
 const collection = document.getElementById("collection");
 const search = document.getElementById("search");
 const resultCount = document.getElementById("resultCount");
 const filtersContainer = document.getElementById("filters");
 const categoryFilters = document.getElementById("category-filters");
 const sort = document.getElementById("sort");
+const collectionHeading = document.getElementById("collectionHeading");
+
 let activeFilter = "All";
 
-// Ignore leading articles when sorting titles alphabetically.
-// Displayed names remain unchanged.
-function sortTitle(name) {
-  return String(name || "").replace(/^(the|a|an)\s+/i, "").trim();
-}
+// Keep Tonies and accessories separate, but let both appear in the catalog.
+const allItems = [...daltonTonies, ...daltonAccessories];
 
-// Generate category buttons from tonies-data.js.
-// All stays first; Creative stays last; everything else is alphabetical.
-const categories = [...new Set(daltonTonies.map(item => item.category).filter(Boolean))]
+// Categories are generated automatically.
+// Accessories is deliberately placed immediately after Creative.
+const categories = [...new Set(allItems.map(item => item.category).filter(Boolean))]
   .sort((a, b) => {
-    if (a === "Creative") return 1;
-    if (b === "Creative") return -1;
+    const order = ["Creative", "Accessories"];
+    const aIndex = order.indexOf(a);
+    const bIndex = order.indexOf(b);
+
+    if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+    if (aIndex !== -1) return 1;
+    if (bIndex !== -1) return -1;
+
     return a.localeCompare(b);
   });
 
@@ -208,28 +213,41 @@ function emojiFor(item) {
   if (item.category === "Disney") return "🏰";
   if (item.category === "Kids & Learning") return "🎵";
   if (item.category === "Creative") return "🧛";
+  if (item.category === "Accessories" || item.type === "accessory") return "🎒";
+  if (item.category === "Superheroes") return "🦸";
+  if (item.category === "Sesame Street") return "🎵";
   return "🎧";
 }
 
 function card(item) {
   const primary = item.image || "";
+  const fallback = item.remoteImage || "";
+
   const art = primary
-    ? `<img src="${primary}" alt="${item.name}" class="tonie-image" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="placeholder" style="display:none">${emojiFor(item)}</div>`
-    : `<div class="placeholder">${emojiFor(item)}</div>`;
+    ? `<img src="${primary}" alt="${item.name}" class="tonie-image"
+         onerror="if(this.dataset.fallbackTried!=='1' && this.dataset.fallback){this.dataset.fallbackTried='1';this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex'}"
+         data-fallback="${fallback}">
+       <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
+    : (fallback
+      ? `<img src="${fallback}" alt="${item.name}" class="tonie-image"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+         <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
+      : `<div class="placeholder">${emojiFor(item)}</div>`);
 
   const details = [
-    item.age ? `Age ${item.age}` : "",
     item.runtime || "",
     item.content || ""
-  ].filter(Boolean).map(x => `<div>${x}</div>`).join("");
+  ].filter(Boolean).map(value => `<div>${value}</div>`).join("");
 
   return `<article class="card">
     <div class="art">${art}</div>
     <div class="card-body">
       <h3>${item.name}</h3>
-      <p class="brand">${item.category === "Pokémon" ? (item.generation || item.displayTitle || item.brand) : (item.displayTitle || item.brand)}</p>
+      <p class="brand">${item.category === "Pokémon"
+        ? (item.generation || item.displayTitle || item.brand || "")
+        : (item.displayTitle || item.brand || "")}</p>
       <div class="badges">
-        <span class="badge">${item.category}</span>
+        <span class="badge">${item.category || "Other"}</span>
       </div>
       ${details ? `<div class="details">${details}</div>` : ""}
       <div class="details" style="margin-top:9px;padding-top:9px">
@@ -239,57 +257,73 @@ function card(item) {
   </article>`;
 }
 
-function render() {
-  const q = search.value.trim().toLowerCase();
-
-  let visible = daltonTonies.filter(item => {
-    const matchesFilter = activeFilter === "All" || item.category === activeFilter;
-    const haystack = `${item.name} ${item.officialName || ""} ${item.brand || ""} ${item.category || ""} ${item.content || ""}`.toLowerCase();
-    return matchesFilter && haystack.includes(q);
-  });
-
-  visible.sort((a, b) => {
-    const titleA = sortTitle(a.name);
-    const titleB = sortTitle(b.name);
-
-    if (sort.value === "name-desc") {
-      return titleB.localeCompare(titleA) || a.name.localeCompare(b.name);
-    }
+function sortItems(items) {
+  return items.sort((a, b) => {
+    if (sort.value === "name-desc") return b.name.localeCompare(a.name);
 
     if (sort.value === "date-newest") {
-      return new Date(b.acquired) - new Date(a.acquired)
-        || titleA.localeCompare(titleB);
+      return new Date(b.acquired || 0) - new Date(a.acquired || 0)
+        || a.name.localeCompare(b.name);
     }
 
     if (sort.value === "date-oldest") {
-      return new Date(a.acquired) - new Date(b.acquired)
-        || titleA.localeCompare(titleB);
+      return new Date(a.acquired || 0) - new Date(b.acquired || 0)
+        || a.name.localeCompare(b.name);
     }
 
-    return titleA.localeCompare(titleB) || a.name.localeCompare(b.name);
+    return a.name.localeCompare(b.name);
   });
+}
+
+function render() {
+  const query = search.value.trim().toLowerCase();
+
+  let visible = allItems.filter(item => {
+    const matchesFilter = activeFilter === "All" || item.category === activeFilter;
+    const haystack = [
+      item.name,
+      item.officialName,
+      item.brand,
+      item.category,
+      item.content,
+      item.displayTitle
+    ].filter(Boolean).join(" ").toLowerCase();
+
+    return matchesFilter && haystack.includes(query);
+  });
+
+  visible = sortItems(visible);
 
   collection.innerHTML = visible.length
     ? visible.map(card).join("")
-    : `<div class="empty" style="grid-column:1/-1">No Tonies match that search.</div>`;
+    : `<div class="empty" style="grid-column:1/-1">No items match that search.</div>`;
 
   resultCount.textContent = `${visible.length} shown`;
+
+  collectionHeading.textContent = activeFilter === "Accessories"
+    ? "🎒 Dalton's Accessories"
+    : activeFilter === "Creative"
+      ? "🧛 Dalton's Creative Tonies"
+      : activeFilter === "All"
+        ? "⭐ Dalton's Collection"
+        : `⭐ ${activeFilter}`;
 }
 
 function updateStats() {
-  const owned = daltonTonies.filter(x => x.status === "owned");
-  document.getElementById("ownedCount").textContent = owned.length;
-}
+  const ownedTonies = daltonTonies.filter(item => item.status === "owned");
+  document.getElementById("ownedCount").textContent = ownedTonies.length;
 
-function updateToniebox() {
-  const acquired = window.daltonToniebox?.acquired || "—";
-  document.getElementById("tonieboxAcquired").textContent = acquired;
+  if (window.daltonToniebox?.acquired) {
+    document.getElementById("tonieboxAcquired").textContent =
+      window.daltonToniebox.acquired;
+  }
 }
 
 filters.forEach(button => {
   button.addEventListener("click", () => {
-    filters.forEach(b => b.classList.remove("active"));
+    filters.forEach(filter => filter.classList.remove("active"));
     button.classList.add("active");
+
     activeFilter = button.dataset.filter;
     render();
   });
@@ -298,7 +332,6 @@ filters.forEach(button => {
 search.addEventListener("input", render);
 sort.addEventListener("change", render);
 
-updateToniebox();
 updateStats();
 render();
 </script>
