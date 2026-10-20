@@ -411,7 +411,7 @@ window.daltonTonies = [
     acquired: "October 20, 2026",
     runtime: "33 min",
     content: "Problem solving, friendship & perseverance",
-    image: "images/tonies/kermit.png",
+    image: "images/tonies/kermit-frog.png",
     purchasePrice: 11.99
   },
   {
