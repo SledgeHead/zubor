@@ -1,455 +1,339 @@
 
- // Dalton's Tonies collection
-// Public catalog data only — no purchase prices, order numbers, or gift-card details.
-// Add future Tonies to this array and the page will pick them up automatically.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dalton's Tonies | Zubor.us</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-window.daltonTonies = [
-  {
-    id: "lilo-stitch",
-    name: "Stitch",
-    officialName: "Disney Lilo & Stitch Tonie",
-    displayTitle: "Lilo & Stitch",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "29 min",
-    content: "Adventure & songs",
-    image: "images/tonies/lilo-stitch.png",
-    featured: true
-  },
-  {
-    id: "elmo-tango",
-    name: "Elmo & Tango",
-    officialName: "Sesame Street: Elmo & Tango Tonie",
-    displayTitle: "Sesame Street",
-    brand: "Sesame Street",
-    category: "Sesame Street",
-    type: "content",
-    status: "owned",
-    acquired: "October 12, 2026",
-    runtime: "30–45 min",
-    content: "Learning, pet responsibility & songs",
-    image: "images/tonies/elmo-tango.png"
-  },
-  {
-    id: "grinch",
-    name: "The Grinch",
-    officialName: "Dr. Seuss: How The Grinch Stole Christmas! Tonie",
-    displayTitle: "Dr. Seuss",
-    brand: "Dr. Seuss",
-    category: "Kids & Learning",
-    type: "content",
-    status: "owned",
-    acquired: "October 12, 2026",
-    runtime: "27 min",
-    content: "Christmas story, songs & holiday lessons",
-    image: "images/tonies/grinch.png"
-  },
-  {
-    id: "101-dalmatians",
-    name: "101 Dalmatians",
-    officialName: "Disney 101 Dalmatians Tonie",
-    displayTitle: "101 Dalmatians",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 12, 2026",
-    runtime: "17 min",
-    content: "Rescue adventure & sing-along songs",
-    image: "images/tonies/101-dalmatians.png"
-  },
-  {
-    id: "lady-and-the-tramp",
-    name: "Lady and the Tramp",
-    officialName: "Disney Lady and the Tramp Tonie",
-    displayTitle: "Lady and the Tramp",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 12, 2026",
-    runtime: "37 min",
-    content: "Heartwarming adventure & songs",
-    image: "images/tonies/lady-and-the-tramp.png"
-  },
-  {
-    id: "simba-cuddle",
-    name: "Simba Cuddle",
-    officialName: "Disney Simba Cuddle Tonie",
-    displayTitle: "The Lion King",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "36 min",
-    content: "Calming stories & sounds",
-    image: "images/tonies/simba-cuddle.png",
-    featured: true
-  },
-  {
-    id: "vampire-creative",
-    name: "Vampire",
-    officialName: "Vampire Creative Tonie",
-    brand: "Creative Tonies",
-    category: "Creative",
-    type: "creative",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "Up to 90 min",
-    content: "Your own audio",
-    image: "images/tonies/vampire-creative.png",
-    featured: true
-  },
-  {
-    id: "monster-creative",
-    name: "Monster",
-    officialName: "Monster Creative Tonie",
-    brand: "Creative Tonies",
-    category: "Creative",
-    type: "creative",
-    status: "owned",
-    acquired: "October 20, 2026",
-    runtime: "Up to 90 min",
-    content: "Halloween stories & spooky audio",
-    image: "images/tonies/monster-creative.png"
-  },
-  {
-    id: "yeti-creative",
-    name: "Yeti",
-    officialName: "Yeti Creative Tonie",
-    brand: "Creative Tonies",
-    category: "Creative",
-    type: "creative",
-    status: "owned",
-    acquired: "October 20, 2026",
-    runtime: "Up to 90 min",
-    content: "Custom stories, songs & audio",
-    image: "images/tonies/yeti-creative.png"
-  },
-  {
-    id: "dorothy-dinosaur",
-    name: "Dorothy the Dinosaur",
-    officialName: "The Wiggles: Dorothy The Dinosaur Tonie",
-    brand: "The Wiggles",
-    category: "Kids & Learning",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "42 min",
-    content: "Songs, movement & education",
-    image: "images/tonies/dorothy-dinosaur.png",
-    featured: true
-  },
-  {
-    id: "pokemon-pikachu",
-    name: "Pikachu",
-    generation: "Gen 1",
-    displayTitle: "Pokémon Adventure",
-    officialName: "Pokémon Pikachu Tonie",
-    brand: "Pokémon",
-    category: "Pokémon",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "78 min",
-    content: "Mysteries, Trainer Academy facts & a Pokémon battle",
-    image: "images/tonies/pokemon-pikachu.png",
-    featured: true
-  },
-  {
-    id: "pokemon-bulbasaur",
-    name: "Bulbasaur",
-    generation: "Gen 1",
-    displayTitle: "Pokémon Adventure",
-    officialName: "Pokémon Bulbasaur Tonie",
-    brand: "Pokémon",
-    category: "Pokémon",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "77 min",
-    content: "Clever adventures, Trainer Academy facts & a Pokémon battle",
-    image: "images/tonies/pokemon-bulbasaur.png",
-    featured: true
-  },
-  {
-    id: "pokemon-charmander",
-    name: "Charmander",
-    generation: "Gen 1",
-    displayTitle: "Pokémon Adventure",
-    officialName: "Pokémon Charmander Tonie",
-    brand: "Pokémon",
-    category: "Pokémon",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "79 min",
-    content: "Fiery adventures, Trainer Academy facts & a Pokémon battle",
-    image: "images/tonies/pokemon-charmander.png",
-    featured: true
-  },
-  {
-    id: "pokemon-squirtle",
-    name: "Squirtle",
-    generation: "Gen 1",
-    displayTitle: "Pokémon Adventure",
-    officialName: "Pokémon Squirtle Tonie",
-    brand: "Pokémon",
-    category: "Pokémon",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "67 min",
-    content: "Seaside adventures, Trainer Academy facts & a Pokémon battle",
-    image: "images/tonies/pokemon-squirtle.png",
-    featured: true
-  },
-  {
-    id: "hercules",
-    name: "Hercules",
-    officialName: "Disney Hercules Tonie",
-    displayTitle: "Hercules",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "47 min",
-    content: "Adventure & sing-along",
-    image: "images/tonies/hercules.png"
-  },
-  {
-    id: "jungle-book",
-    name: "Baloo",
-    officialName: "Disney The Jungle Book Tonie",
-    displayTitle: "The Jungle Book",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "15–30 min",
-    content: "Adventure & songs",
-    image: "images/tonies/jungle-book.png"
-  },
-  {
-    id: "monsters-inc",
-    name: "Sulley",
-    officialName: "Disney and Pixar Monsters, Inc. Tonie",
-    displayTitle: "Monsters, Inc.",
-    brand: "Disney & Pixar",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "33 min",
-    content: "Adventure & songs",
-    image: "images/tonies/monsters-inc.png"
-  },
-  {
-    id: "mickey-mouse-clubhouse",
-    name: "Mickey Mouse",
-    officialName: "Disney Mickey Mouse Clubhouse Tonie",
-    displayTitle: "Mickey Mouse Clubhouse",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "38 min",
-    content: "Adventure & songs",
-    image: "images/tonies/mickey-mouse-clubhouse.png"
-  },
-  {
-    id: "woody",
-    name: "Woody",
-    officialName: "Disney and Pixar Toy Story: Woody Tonie",
-    displayTitle: "Toy Story",
-    brand: "Disney & Pixar",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "28 min",
-    content: "Adventure & songs",
-    image: "images/tonies/woody.png"
-  },
-  {
-    id: "ms-rachel",
-    name: "Ms. Rachel",
-    officialName: "Ms. Rachel Tonie",
-    brand: "Ms. Rachel",
-    category: "Kids & Learning",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "About 50 min",
-    content: "Songs & learning",
-    image: "images/tonies/ms-rachel.png"
-  },
-  {
-    id: "cookie-monster",
-    name: "Cookie Monster",
-    officialName: "Sesame Street: Cookie Monster Tonie",
-    brand: "Sesame Street",
-    category: "Sesame Street",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "30–45 min",
-    content: "Healthy habits, education & songs",
-    image: "images/tonies/cookie-monster.png"
-  },
-  {
-    id: "blues-clues",
-    name: "Blue's Clues & You!",
-    officialName: "Blue’s Clues & You Tonie",
-    brand: "Blue's Clues & You!",
-    category: "Kids & Learning",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "57 min",
-    content: "Learning, problem-solving & songs",
-    image: "images/tonies/blues-clues.png"
-  },
-  {
-    id: "nightmare-before-christmas",
-    name: "Jack Skellington",
-    officialName: "Disney The Nightmare Before Christmas Tonie",
-    displayTitle: "The Nightmare Before Christmas",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "47 min",
-    content: "Story & songs",
-    image: "images/tonies/nightmare-before-christmas.png"
-  },
-  {
-    id: "lion-king",
-    name: "Simba",
-    officialName: "Disney The Lion King Tonie",
-    displayTitle: "The Lion King",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "30–45 min",
-    content: "Story & songs",
-    image: "images/tonies/lion-king.png"
-  },
-  {
-    id: "incredibles",
-    name: "Mr. Incredible",
-    officialName: "Disney and Pixar The Incredibles Tonie",
-    displayTitle: "The Incredibles",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 7, 2026",
-    runtime: "60+ min",
-    content: "Adventure",
-    image: "images/tonies/incredibles.png"
-  },
-  {
-    id: "soul",
-    name: "Soul",
-    officialName: "Disney and Pixar Soul Tonie",
-    displayTitle: "Soul",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 20, 2026",
-    runtime: "31 min",
-    content: "Jazz music, discovering your passions & helping others",
-    image: "images/tonies/soul.png"
-  },
-  {
-    id: "kermit-frog",
-    name: "Kermit the Frog",
-    officialName: "Disney The Muppets: Kermit the Frog Tonie",
-    displayTitle: "The Muppets",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 20, 2026",
-    runtime: "33 min",
-    content: "Muppet adventures, friendship & perseverance",
-    image: "images/tonies/kermit-frog.png"
-  },
-  {
-    id: "batman",
-    name: "Batman",
-    officialName: "DC Batman Tonie",
-    displayTitle: "Batman",
-    brand: "DC",
-    category: "Superheroes",
-    type: "content",
-    status: "owned",
-    acquired: "October 20, 2026",
-    runtime: "1 hr 8 min",
-    content: "Gotham adventures, villains & superhero training",
-    image: "images/tonies/batman.png"
-  },
-  {
-    id: "minnie-mouse",
-    name: "Minnie Mouse",
-    officialName: "Disney Minnie Mouse Tonie",
-    displayTitle: "Minnie Mouse",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 20, 2026",
-    runtime: "20 min",
-    content: "Classic children's songs, imagination & friendship",
-    image: "images/tonies/minnie-mouse.png"
-  },
-  {
-    id: "mickey-mouse",
-    name: "Mickey Mouse",
-    officialName: "Disney Mickey Mouse Tonie",
-    displayTitle: "Mickey Mouse",
-    brand: "Disney",
-    category: "Disney",
-    type: "content",
-    status: "owned",
-    acquired: "October 20, 2026",
-    runtime: "38 min",
-    content: "Mystery adventure with Mickey Mouse and Goofy",
-    image: "images/tonies/mickey-mouse.png"
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#edfcfc;color:#4088b2;font-family:'Quicksand',Arial,sans-serif}
+.container{width:min(94%,1080px);margin:auto;padding:22px 0 46px}
+.back{display:inline-block;margin:4px 0 16px;color:#4088b2;text-decoration:none;font-weight:700}
+.hero,.controls,.box-card,.section-note{background:#fff;border-radius:22px;box-shadow:0 12px 30px rgba(64,136,178,.14)}
+.hero{text-align:center;padding:25px;margin-bottom:18px}
+.logo{width:145px;max-width:55%;margin:0 auto 8px;display:block}
+h1{margin:5px 0 5px;font-size:2rem}
+.subtitle{margin:0;color:#6b92a8}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.stat{background:#f6fbfc;border-radius:15px;padding:12px}
+.stat strong{display:block;font-size:1.5rem}
+.stat span{font-size:.8rem;color:#6b92a8}
+.controls{padding:16px;margin-bottom:20px}
+.search{width:100%;border:2px solid #dceff3;border-radius:13px;padding:12px 14px;font:inherit;color:#4088b2;outline:none}
+.search:focus{border-color:#4088b2}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.filter{border:0;background:#eaf7f9;color:#4088b2;padding:8px 12px;border-radius:999px;font:inherit;font-weight:700;cursor:pointer}
+.filter-link{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.wishlist-link{background:#f2ebfa;color:#7654a6;padding:8px 12px;border-radius:999px;font:inherit;font-weight:700;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.wishlist-link:hover{background:#e8dcf5;color:#654391}
+.wishlist-wrap{display:inline-flex;align-items:center;padding-left:8px;margin-left:2px;border-left:1px solid #cfe7ec}
+.filter.active{background:#4088b2;color:#fff}
+.box-card{padding:18px;margin-bottom:22px;display:flex;align-items:center;gap:18px}
+.box-art{width:86px;height:86px;flex:0 0 86px;border-radius:24px;background:linear-gradient(145deg,#ffe95b,#f7c928);display:flex;align-items:center;justify-content:center;font-size:2.8rem;box-shadow:inset 0 -8px 15px rgba(0,0,0,.08)}
+.box-card h2{margin:0 0 4px;font-size:1.25rem}
+.box-card p{margin:3px 0;color:#6b92a8}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 2px 12px}
+.section-title h2{margin:0;font-size:1.35rem}
+.section-count{color:#7c9eb2;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,220px));justify-content:center;gap:16px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 20px rgba(64,136,178,.13);transition:.2s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 26px rgba(64,136,178,.2)}
+.art{aspect-ratio:1/1;background:linear-gradient(145deg,#f5fbfc,#dceff3);display:flex;align-items:center;justify-content:center;padding:18px;overflow:hidden}
+.art img{width:180px !important;height:180px !important;object-fit:contain;border-radius:20px !important;clip-path:inset(0 round 20px);overflow:hidden;display:block;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16)}
+.placeholder{width:108px;height:128px;border-radius:27px 27px 31px 31px;background:#fff;box-shadow:0 8px 18px rgba(64,136,178,.16);display:flex;align-items:center;justify-content:center;font-size:3rem}
+.card-body{padding:14px}
+.card h3{margin:0 0 3px;font-size:1.04rem;line-height:1.2}
+.brand{margin:0 0 10px;color:#7c9eb2;font-size:.82rem}
+.badges{display:flex;flex-wrap:wrap;gap:5px}
+.badge{background:#4088b2;color:#fff;padding:4px 8px;border-radius:999px;font-size:.7rem;font-weight:700}
+.badge.soft{background:#eaf7f9;color:#4088b2}
+.details{margin-top:10px;padding-top:9px;border-top:1px solid #edf4f5;color:#6b92a8;font-size:.78rem;line-height:1.5}
+.empty{background:#fff;border-radius:18px;padding:28px;text-align:center;color:#6b92a8}
+.section-note{margin-top:22px;padding:17px;text-align:center;color:#6b92a8}
+.section-note strong{color:#4088b2}
+.footer{text-align:center;color:#6b92a8;font-size:.9rem;margin-top:28px}
+@media(max-width:560px){
+  .container{width:calc(100% - 24px);padding:14px 0 34px}
+  .back{margin:2px 0 10px;font-size:.78rem}
+  .hero{padding:20px 14px;border-radius:18px;margin-bottom:12px}
+  .logo{width:125px}
+  h1{font-size:1.55rem}
+  .subtitle{font-size:.82rem}
+  .stats{grid-template-columns:1fr !important;margin-top:14px}
+  .stats .stat:last-child{grid-column:auto}
+  .stat{padding:9px}
+  .stat strong{font-size:1.25rem}
+  .box-card{padding:13px;gap:12px;margin-bottom:12px;border-radius:18px}
+  .box-art{width:64px;height:64px;flex-basis:64px;border-radius:18px;font-size:2rem}
+  .box-card h2{font-size:1rem}
+  .box-card p{font-size:.72rem;line-height:1.35}
+  .controls{padding:12px;border-radius:18px;margin-bottom:16px}
+  .search{padding:10px 12px;font-size:.9rem}
+  .filters{gap:6px;margin-top:10px}
+  .filter{padding:7px 10px;font-size:.8rem}
+  .section-title{margin:18px 2px 9px}
+  .section-title h2{font-size:1.15rem}
+  .section-count{font-size:.78rem}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .card{border-radius:15px}
+  .card:hover{transform:none}
+  .art{aspect-ratio:1/1;padding:12px}
+  .art img,.tonie-image{width:140px !important;height:140px !important}
+  .placeholder{width:96px;height:110px;border-radius:22px;font-size:2.3rem}
+  .card-body{padding:10px}
+  .card h3{font-size:.88rem}
+  .brand{font-size:.72rem;margin-bottom:7px;line-height:1.25}
+  .badges{gap:4px}
+  .badge{padding:3px 6px;font-size:.62rem}
+  .details{margin-top:7px;padding-top:7px;font-size:.68rem;line-height:1.4}
+  .section-note{padding:14px;margin-top:16px;font-size:.8rem}
+  .footer{font-size:.72rem;margin-top:20px}
+}
+@media(max-width:360px){
+  .container{width:calc(100% - 16px)}
+  .grid{gap:8px}
+  .art{padding:10px}
+  .art img,.tonie-image{width:128px !important;height:128px !important}
+  .card-body{padding:9px}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<a class="back" href="index.html">← Back to Home</a>
+
+<section class="hero">
+  <img class="logo" src="zuborUS.png" alt="Zubor.us">
+  <h1>🎧 Dalton's Tonies</h1>
+  <p class="subtitle">Stories, songs & adventures</p>
+  <div class="stats" style="grid-template-columns:1fr">
+    <div class="stat" style="max-width:340px;width:100%;margin:auto">
+      <strong id="ownedCount">0</strong><span>Total Tonies</span>
+    </div>
+  </div>
+</section>
+
+<section class="box-card">
+  <div class="box-art">⚡</div>
+  <div>
+    <h2>Dalton's Toniebox 2</h2>
+    <p><strong>Lightning Yellow</strong> · Pokémon Starter Set</p>
+    <p>Added <span id="tonieboxAcquired">December 25, 2026</span> · The beginning of Dalton's Tonie collection.</p>
+  </div>
+</section>
+
+<section class="controls">
+  <input id="search" class="search" type="search" placeholder="Search Dalton's Tonies…">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px">
+    <label for="sort" style="font-weight:700;font-size:.85rem">Sort:</label>
+    <select id="sort" style="border:2px solid #dceff3;border-radius:999px;padding:8px 12px;background:#fff;color:#4088b2;font:inherit;font-weight:700;outline:none">
+      <option value="name-asc">Character A–Z</option>
+      <option value="name-desc">Character Z–A</option>
+      <option value="date-newest">Date Acquired — Newest</option>
+      <option value="date-oldest">Date Acquired — Oldest</option>
+    </select>
+  </div>
+  <div id="filters" class="filters">
+    <button class="filter active" data-filter="All">All</button>
+    <span id="category-filters" class="category-filters"></span>
+    <span class="wishlist-wrap"><a class="wishlist-link" href="https://my.babylist.com/dalton-zubor" target="_blank" rel="noopener">Wishlist</a></span>
+  </div>
+</section>
+
+<div class="section-title">
+  <h2 id="collectionHeading">⭐ Dalton's Collection</h2>
+  <span class="section-count" id="resultCount"></span>
+</div>
+
+<section id="collection" class="grid"></section>
+
+<section class="section-note">
+  <strong>🎁 Dalton's Tonies Wishlist</strong><br>
+  Want to help Dalton add to his collection?<br>
+  <a id="wishlistLink" href="https://my.babylist.com/dalton-zubor" target="_blank" rel="noopener"
+     style="display:inline-block;margin-top:10px;background:#4088b2;color:#fff;text-decoration:none;padding:9px 15px;border-radius:999px;font-weight:700">
+    View Dalton's Wishlist →
+  </a>
+</section>
+
+<div class="footer">
+  Adventure awaits.<br>
+  ❤️ The Zubor Family
+</div>
+
+</div>
+
+<script src="./tonies-data.js?v=20261020-02"></script>
+<script>
+const daltonTonies = window.daltonTonies || [];
+const daltonAccessories = window.daltonAccessories || [];
+
+const collection = document.getElementById("collection");
+const search = document.getElementById("search");
+const resultCount = document.getElementById("resultCount");
+const filtersContainer = document.getElementById("filters");
+const categoryFilters = document.getElementById("category-filters");
+const sort = document.getElementById("sort");
+const collectionHeading = document.getElementById("collectionHeading");
+
+let activeFilter = "All";
+
+// Keep Tonies and accessories separate, but let both appear in the catalog.
+const allItems = [...daltonTonies, ...daltonAccessories];
+
+// Categories are generated automatically.
+// Accessories is deliberately placed immediately after Creative.
+const categories = [...new Set(allItems.map(item => item.category).filter(Boolean))]
+  .sort((a, b) => {
+    const order = ["Creative", "Accessories"];
+    const aIndex = order.indexOf(a);
+    const bIndex = order.indexOf(b);
+
+    if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+    if (aIndex !== -1) return 1;
+    if (bIndex !== -1) return -1;
+
+    return a.localeCompare(b);
+  });
+
+categoryFilters.innerHTML = categories.map(category =>
+  `<button class="filter" data-filter="${category.replace(/"/g, "&quot;")}">${category}</button>`
+).join("");
+
+const filters = filtersContainer.querySelectorAll(".filter");
+
+function emojiFor(item) {
+  if (item.category === "Pokémon") return "⚡";
+  if (item.category === "Disney") return "🏰";
+  if (item.category === "Kids & Learning") return "🎵";
+  if (item.category === "Creative") return "🧛";
+  if (item.category === "Accessories" || item.type === "accessory") return "🎒";
+  if (item.category === "Superheroes") return "🦸";
+  if (item.category === "Sesame Street") return "🎵";
+  return "🎧";
+}
+
+function card(item) {
+  const primary = item.image || "";
+  const fallback = item.remoteImage || "";
+
+  const art = primary
+    ? `<img src="${primary}" alt="${item.name}" class="tonie-image"
+         onerror="if(this.dataset.fallbackTried!=='1' && this.dataset.fallback){this.dataset.fallbackTried='1';this.src=this.dataset.fallback;}else{this.style.display='none';this.nextElementSibling.style.display='flex'}"
+         data-fallback="${fallback}">
+       <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
+    : (fallback
+      ? `<img src="${fallback}" alt="${item.name}" class="tonie-image"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+         <div class="placeholder" style="display:none">${emojiFor(item)}</div>`
+      : `<div class="placeholder">${emojiFor(item)}</div>`);
+
+  const details = [
+    item.runtime || "",
+    item.content || ""
+  ].filter(Boolean).map(value => `<div>${value}</div>`).join("");
+
+  return `<article class="card">
+    <div class="art">${art}</div>
+    <div class="card-body">
+      <h3>${item.name}</h3>
+      <p class="brand">${item.category === "Pokémon"
+        ? (item.generation || item.displayTitle || item.brand || "")
+        : (item.displayTitle || item.brand || "")}</p>
+      <div class="badges">
+        <span class="badge">${item.category || "Other"}</span>
+      </div>
+      ${details ? `<div class="details">${details}</div>` : ""}
+      <div class="details" style="margin-top:9px;padding-top:9px">
+        <strong>Acquired:</strong> ${item.acquired || "—"}
+      </div>
+    </div>
+  </article>`;
+}
+
+function sortItems(items) {
+  return items.sort((a, b) => {
+    if (sort.value === "name-desc") return b.name.localeCompare(a.name);
+
+    if (sort.value === "date-newest") {
+      return new Date(b.acquired || 0) - new Date(a.acquired || 0)
+        || a.name.localeCompare(b.name);
+    }
+
+    if (sort.value === "date-oldest") {
+      return new Date(a.acquired || 0) - new Date(b.acquired || 0)
+        || a.name.localeCompare(b.name);
+    }
+
+    return a.name.localeCompare(b.name);
+  });
+}
+
+function render() {
+  const query = search.value.trim().toLowerCase();
+
+  let visible = allItems.filter(item => {
+    const matchesFilter = activeFilter === "All" || item.category === activeFilter;
+    const haystack = [
+      item.name,
+      item.officialName,
+      item.brand,
+      item.category,
+      item.content,
+      item.displayTitle
+    ].filter(Boolean).join(" ").toLowerCase();
+
+    return matchesFilter && haystack.includes(query);
+  });
+
+  visible = sortItems(visible);
+
+  collection.innerHTML = visible.length
+    ? visible.map(card).join("")
+    : `<div class="empty" style="grid-column:1/-1">No items match that search.</div>`;
+
+  resultCount.textContent = `${visible.length} shown`;
+
+  collectionHeading.textContent = activeFilter === "Accessories"
+    ? "🎒 Dalton's Accessories"
+    : activeFilter === "Creative"
+      ? "🧛 Dalton's Creative Tonies"
+      : activeFilter === "All"
+        ? "⭐ Dalton's Collection"
+        : `⭐ ${activeFilter}`;
+}
+
+function updateStats() {
+  const ownedTonies = daltonTonies.filter(item => item.status === "owned");
+  document.getElementById("ownedCount").textContent = ownedTonies.length;
+
+  if (window.daltonToniebox?.acquired) {
+    document.getElementById("tonieboxAcquired").textContent =
+      window.daltonToniebox.acquired;
   }
-];
+}
 
-// Accessories are kept separate from the Tonies catalog.
-window.daltonAccessories = [
-  {
-    id: "cookie-monster-backpack",
-    name: "Cookie Monster Backpack",
-    officialName: "Cookie Monster Backpack",
-    brand: "Sesame Street",
-    category: "Accessories",
-    type: "accessory",
-    status: "owned",
-    acquired: "October 20, 2026",
-    content: "Holds a Toniebox, headphones, charging cable & Tonies",
-    image: "images/tonies/cookie-monster-backpack.png"
-  }
-];
+filters.forEach(button => {
+  button.addEventListener("click", () => {
+    filters.forEach(filter => filter.classList.remove("active"));
+    button.classList.add("active");
 
-window.daltonToniebox = {
-  name: "Toniebox 2",
-  color: "Lightning Yellow",
-  acquired: "December 25, 2026",
-  source: "Pokémon Toniebox 2 Starter Set"
-};
+    activeFilter = button.dataset.filter;
+    render();
+  });
+});
+
+search.addEventListener("input", render);
+sort.addEventListener("change", render);
+
+updateStats();
+render();
+</script>
+</body>
+</html>
