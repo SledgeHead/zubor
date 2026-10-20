@@ -105,6 +105,32 @@ window.daltonTonies = [
     featured: true
   },
   {
+    id: "monster-creative",
+    name: "Monster",
+    officialName: "Monster Creative Tonie",
+    brand: "Creative Tonies",
+    category: "Creative",
+    type: "creative",
+    status: "owned",
+    acquired: "October 20, 2026",
+    runtime: "Up to 90 min",
+    content: "Halloween stories & spooky audio",
+    image: "images/tonies/monster-creative.png"
+  },
+  {
+    id: "yeti-creative",
+    name: "Yeti",
+    officialName: "Yeti Creative Tonie",
+    brand: "Creative Tonies",
+    category: "Creative",
+    type: "creative",
+    status: "owned",
+    acquired: "October 20, 2026",
+    runtime: "Up to 90 min",
+    content: "Custom stories, songs & audio",
+    image: "images/tonies/yeti-creative.png"
+  },
+  {
     id: "dorothy-dinosaur",
     name: "Dorothy the Dinosaur",
     officialName: "The Wiggles: Dorothy The Dinosaur Tonie",
@@ -324,7 +350,7 @@ window.daltonTonies = [
     name: "Mr. Incredible",
     officialName: "Disney and Pixar The Incredibles Tonie",
     displayTitle: "The Incredibles",
-    brand: "Disney & Pixar",
+    brand: "Disney",
     category: "Disney",
     type: "content",
     status: "owned",
@@ -332,6 +358,92 @@ window.daltonTonies = [
     runtime: "60+ min",
     content: "Adventure",
     image: "images/tonies/incredibles.png"
+  },
+  {
+    id: "soul",
+    name: "Soul",
+    officialName: "Disney and Pixar Soul Tonie",
+    displayTitle: "Soul",
+    brand: "Disney",
+    category: "Disney",
+    type: "content",
+    status: "owned",
+    acquired: "October 20, 2026",
+    runtime: "31 min",
+    content: "Jazz music, discovering your passions & helping others",
+    image: "images/tonies/soul.png"
+  },
+  {
+    id: "kermit-frog",
+    name: "Kermit the Frog",
+    officialName: "Disney The Muppets: Kermit the Frog Tonie",
+    displayTitle: "The Muppets",
+    brand: "Disney",
+    category: "Disney",
+    type: "content",
+    status: "owned",
+    acquired: "October 20, 2026",
+    runtime: "33 min",
+    content: "Muppet adventures, friendship & perseverance",
+    image: "images/tonies/kermit-frog.png"
+  },
+  {
+    id: "batman",
+    name: "Batman",
+    officialName: "DC Batman Tonie",
+    displayTitle: "Batman",
+    brand: "DC",
+    category: "Superheroes",
+    type: "content",
+    status: "owned",
+    acquired: "October 20, 2026",
+    runtime: "1 hr 8 min",
+    content: "Gotham adventures, villains & superhero training",
+    image: "images/tonies/batman.png"
+  },
+  {
+    id: "minnie-mouse",
+    name: "Minnie Mouse",
+    officialName: "Disney Minnie Mouse Tonie",
+    displayTitle: "Minnie Mouse",
+    brand: "Disney",
+    category: "Disney",
+    type: "content",
+    status: "owned",
+    acquired: "October 20, 2026",
+    runtime: "20 min",
+    content: "Classic children's songs, imagination & friendship",
+    image: "images/tonies/minnie-mouse.png"
+  },
+  {
+    id: "mickey-mouse",
+    name: "Mickey Mouse",
+    officialName: "Disney Mickey Mouse Tonie",
+    displayTitle: "Mickey Mouse",
+    brand: "Disney",
+    category: "Disney",
+    type: "content",
+    status: "owned",
+    acquired: "October 20, 2026",
+    runtime: "38 min",
+    content: "Mystery adventure with Mickey Mouse and Goofy",
+    image: "images/tonies/mickey-mouse.png"
+  }
+];
+
+// Accessories are kept separate from the Tonies catalog.
+window.daltonAccessories = [
+  {
+    id: "cookie-monster-backpack",
+    name: "Cookie Monster Backpack",
+    officialName: "Cookie Monster Backpack",
+    brand: "Sesame Street",
+    category: "Accessories",
+    type: "accessory",
+    status: "owned",
+    acquired: "October 20, 2026",
+    content: "Holds a Toniebox, headphones, charging cable & Tonies",
+    image: "images/tonies/cookie-monster-backpack.png"
   }
 ];
 
