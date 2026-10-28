@@ -1,5 +1,4 @@
-
- // Dalton's Tonies collection
+// Dalton's Tonies collection
 // Keep Tonies and accessories in separate arrays.
 // Do not include age fields in this catalog.
 
@@ -138,6 +137,49 @@ window.daltonTonies = [
     content: "Your own audio, stories and adventures",
     image: "images/tonies/yeti-creative.png",
     purchasePrice: 0.00
+  },
+  {
+    id: "wizard-creative",
+    name: "Wizard",
+    officialName: "Wizard Creative Tonie",
+    brand: "Creative Tonies",
+    category: "Creative",
+    type: "creative",
+    status: "owned",
+    acquired: "October 28, 2026",
+    runtime: "Up to 90 min",
+    content: "Your own audio, stories and adventures",
+    image: "images/tonies/wizard-creative.png",
+    purchasePrice: 0.00
+  },
+  {
+    id: "santa-creative",
+    name: "Santa",
+    officialName: "Santa Creative Tonie",
+    brand: "Creative Tonies",
+    category: "Creative",
+    type: "creative",
+    status: "owned",
+    acquired: "October 28, 2026",
+    runtime: "Up to 90 min",
+    content: "Your own Christmas stories, songs and messages",
+    image: "images/tonies/santa-creative.png",
+    purchasePrice: 8.00
+  },
+  {
+    id: "light-blue-dark-hue-creative",
+    name: "Light Blue with Dark Hue",
+    officialName: "Light Blue with Dark Hue Creative Tonie",
+    brand: "Creative Tonies",
+    category: "Creative",
+    type: "creative",
+    status: "owned",
+    acquired: "October 28, 2026",
+    runtime: "Up to 90 min",
+    content: "Your own audio, stories and adventures",
+    image: "images/tonies/light-blue-dark-hue-creative.png",
+    purchasePrice: 13.98,
+    quantity: 2
   },
   {
     id: "dorothy-dinosaur",
@@ -457,6 +499,51 @@ window.daltonTonies = [
     runtime: "38 min",
     content: "Mystery adventure with Mickey Mouse and Goofy",
     image: "images/tonies/mickey-mouse.png",
+    purchasePrice: 11.99
+  },
+  {
+    id: "nature-sounds",
+    name: "Nap Time: Nature Sounds",
+    officialName: "Nap Time: Nature Sounds Tonie",
+    displayTitle: "Nap Time: Nature Sounds",
+    brand: "tonies Original",
+    category: "Kids & Learning",
+    type: "content",
+    status: "owned",
+    acquired: "October 28, 2026",
+    runtime: "2 hr",
+    content: "Relaxing nature sounds to help with naps and sleep",
+    image: "images/tonies/nature-sounds.png",
+    purchasePrice: 8.99
+  },
+  {
+    id: "bedtime-songs",
+    name: "Bedtime Songs",
+    officialName: "Favorite Children's Songs: Bedtime Songs Tonie",
+    displayTitle: "Bedtime Songs",
+    brand: "tonies Original",
+    category: "Kids & Learning",
+    type: "content",
+    status: "owned",
+    acquired: "October 28, 2026",
+    runtime: "30–45 min",
+    content: "Traditional children's songs and lullabies",
+    image: "images/tonies/bedtime-songs.png",
+    purchasePrice: 11.99
+  },
+  {
+    id: "spooky-tales",
+    name: "Spooky Tales",
+    officialName: "Favorite Tales: Spooky Tales Tonie",
+    displayTitle: "Spooky Tales",
+    brand: "tonies Original",
+    category: "Kids & Learning",
+    type: "content",
+    status: "owned",
+    acquired: "October 28, 2026",
+    runtime: "1 hr",
+    content: "Three classic spooky stories adapted for young listeners",
+    image: "images/tonies/spooky-tales.png",
     purchasePrice: 11.99
   }
 ];
